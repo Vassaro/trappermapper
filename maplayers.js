@@ -159,10 +159,10 @@ sources.forEach(source => {
                     }
                     if (!feature.properties.skip) { // för att dölja vissa stigar
                         if (typeof (feature.properties.group) === 'string') {
-                            eval("groups." + feature.properties.group).addLayer(layer);
+                            groups[feature.properties.group].addLayer(layer);
                         } else {
                             feature.properties.group.forEach(element => {
-                                eval("groups." + element).addLayer(layer);
+                                groups[element].addLayer(layer);
                             })
                         }
                     }
@@ -170,7 +170,7 @@ sources.forEach(source => {
                 pointToLayer: function (feature, latlng) {
                     if (feature.properties.icon) {
                         thisMarker = L.marker(latlng, {
-                            icon: eval("icons." + feature.properties.icon),
+                            icon: icons[feature.properties.icon],
                         });
                     } else {
                         thisMarker = L.marker(latlng, {
