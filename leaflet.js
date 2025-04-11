@@ -81,9 +81,9 @@ if (document.querySelector('input[name="selectBackground"]')) {
         elem.addEventListener("change", function (event) {
             var item = event.target.value;
             for (let key in MapLayers.Basemaps) {
-                eval("MapLayers.Basemaps." + key).remove();
+                MapLayers.Basemaps[key].remove();
             };
-            eval("MapLayers.Basemaps." + item).addTo(lfmap);
+            MapLayers.Basemaps[item].addTo(lfmap);
         });
     });
 }
