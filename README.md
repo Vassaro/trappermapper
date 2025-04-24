@@ -7,7 +7,7 @@ This interactive map is developed by the Program staff at Vässarö scout centre
 
 ## How to use
 Either:
-- Go to https://danielmartling.github.io/trappermapper/.
+- Go to https://vassaro.github.io/trappermapper/.
 - Scan the following QR code: 
   
   ![QR code that lead to the map.](/img/qr/qr-hollyrosa2.png "QR code that lead to the map.")
