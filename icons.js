@@ -1,5 +1,5 @@
 // icons.js
-var icons = {
+const ICONS = {
     firehousePin: new L.Icon({
         iconUrl: 'icons/firehouse.png',
         iconSize: [60, 60],
