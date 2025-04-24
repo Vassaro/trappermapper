@@ -159,7 +159,7 @@ SOURCES.forEach(source => {
                     }
                     if (!feature.properties.skip) { // för att dölja vissa stigar
                         if (typeof (feature.properties.group) === 'string') {
-                            GROUPS[feature.properties.group].addLayer(markers);
+                            GROUPS[feature.properties.group].addLayer(layer);
                         } else {
                             feature.properties.group.forEach(element => {
                                 GROUPS[element].addLayer(layer);
