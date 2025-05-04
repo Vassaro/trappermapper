@@ -8,22 +8,22 @@ var lfmap = L.map('map', {
 });
 
 // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
-var southWest = L.latLng(60.0, 18.0);
-var northEast = L.latLng(60.4, 19.0);
-var bounds = L.latLngBounds(southWest, northEast);
-lfmap.setMaxBounds(bounds);
+const SOUTH_WEST = L.latLng(60.0, 18.0);
+const NORTH_EAST = L.latLng(60.4, 19.0);
+const BOUNDS = L.latLngBounds(SOUTH_WEST, NORTH_EAST);
+lfmap.setMaxBounds(BOUNDS);
 lfmap.on('drag', function () {
-    lfmap.panInsideBounds(bounds, { animate: true });
+    lfmap.panInsideBounds(BOUNDS, { animate: true });
 });
 
 // Lägg till lager och kontroller till kartan.
-var layerControl = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
+const LAYER_CONTROL = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
 
 // Lägg till sidomeny till kartan.
-var sidebar = L.control.sidebar('sidebar').addTo(lfmap);
+const SIDEBAR = L.control.sidebar('sidebar').addTo(lfmap);
 
 // Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
-var lc = L.control
+const LC = L.control
     .locate({
         strings: {
             title: "Visar din nuvarande position!"
@@ -31,7 +31,7 @@ var lc = L.control
     }).addTo(lfmap);
 
 // Skapa fullskärmskontrollen med egen text
-var fullscreen = L.control.fullscreen({
+const FULLSCREEN = L.control.fullscreen({
   title: {
     "false": "Fullskärmsläge",
     "true": "Återgå till normalläge"
@@ -39,30 +39,30 @@ var fullscreen = L.control.fullscreen({
 }).addTo(lfmap);
 
 // Lägg till zoom-kontroll
-var zoom = L.control.zoom().addTo(lfmap)
+const ZOOM = L.control.zoom().addTo(lfmap)
 
 // Skapa skalan
-var scale = L.control.scale({
+const SCALE = L.control.scale({
     position: "bottomright",
     metric: true,
 }).addTo(lfmap)
 
 // Flytta knappar till sidomenyn eller filtermenyn.
-var objects = [fullscreen, lc, zoom]
-var buttonbox = document.getElementById('button-box')
-var filterbox = document.getElementById('filter-box')
+const OBJECTS = [FULLSCREEN, LC, ZOOM]
+const BUTTON_BOX = document.getElementById('button-box')
+const FILTER_BOX = document.getElementById('filter-box')
 function setParent(child, newParent) {
     newParent.appendChild(child.getContainer());
 };
-objects.forEach(element => {
-    setParent(element, buttonbox);
+OBJECTS.forEach(element => {
+    setParent(element, BUTTON_BOX);
 });
-setParent(layerControl, filterbox);
+setParent(LAYER_CONTROL, FILTER_BOX);
 
 // Switch lägerskole view
 document.getElementById("lagerskola").addEventListener('click', e => {
-    if (lfmap.hasLayer(groups.ls)) {
-        lfmap.removeLayer(groups.ls)
+    if (lfmap.hasLayer(GROUPS.ls)) {
+        lfmap.removeLayer(GROUPS.ls)
         document.getElementById("lagerskola").style.backgroundColor = "transparent";
     } else { // Remove every layer and add lägerskole layer
         lfmap.eachLayer(function (layer) {
@@ -70,7 +70,7 @@ document.getElementById("lagerskola").addEventListener('click', e => {
                 lfmap.removeLayer(layer);
             }
         });
-        lfmap.addLayer(groups.ls);
+        lfmap.addLayer(GROUPS.ls);
         document.getElementById("lagerskola").style.backgroundColor = "#003660";
     }
 });
@@ -79,11 +79,11 @@ document.getElementById("lagerskola").addEventListener('click', e => {
 if (document.querySelector('input[name="selectBackground"]')) {
     document.querySelectorAll('input[name="selectBackground"]').forEach((elem) => {
         elem.addEventListener("change", function (event) {
-            var item = event.target.value;
+            const ITEM = event.target.value;
             for (let key in MapLayers.Basemaps) {
-                eval("MapLayers.Basemaps." + key).remove();
+                MapLayers.Basemaps[key].remove();
             };
-            eval("MapLayers.Basemaps." + item).addTo(lfmap);
+            MapLayers.Basemaps[ITEM].addTo(lfmap);
         });
     });
 }

@@ -1,5 +1,5 @@
 //Definera länkar till basemaps (grundkartor) OpenStreetMap & satellit
-var basemaps = {
+const BASEMAPS = {
     OpenStreetMap: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</a>.'
     }),
@@ -9,7 +9,7 @@ var basemaps = {
 };
 
 //Definerar grupper
-var groups = {
+const GROUPS = {
     campfirering: new L.LayerGroup(),
     campfirerock: new L.LayerGroup(),
     firehouse: new L.LayerGroup(),
@@ -48,7 +48,7 @@ var groups = {
 };
 
 //Grupperar kartlager
-var overlaysTree = {
+const OVERLAYS_TREE = {
     label: "Visa / dölj alla",
     selectAllCheckbox: 'Visa/dölj alla',
     children: [
@@ -57,10 +57,10 @@ var overlaysTree = {
             selectAllCheckbox: true,
             collapsed: true,
             children: [
-                { label: "Stockringar", layer: groups.campfirering },
-                { label: "Klipphällar", layer: groups.campfirerock },
-                { label: "Eldstad med tak", layer: groups.firehouse },
-                // { label: "Andra", layer: groups.campfireother },
+                { label: "Stockringar", layer: GROUPS.campfirering },
+                { label: "Klipphällar", layer: GROUPS.campfirerock },
+                { label: "Eldstad med tak", layer: GROUPS.firehouse },
+                // { label: "Andra", layer: GROUPS.campfireother },
             ]
         },
         {
@@ -68,8 +68,8 @@ var overlaysTree = {
             selectAllCheckbox: true,
             collapsed: true,
             children: [
-                { label: "Med eldstad", layer: groups.windshelterfire },
-                { label: "Utan eldstad", layer: groups.windshelter },
+                { label: "Med eldstad", layer: GROUPS.windshelterfire },
+                { label: "Utan eldstad", layer: GROUPS.windshelter },
             ]
         },
         {
@@ -77,19 +77,19 @@ var overlaysTree = {
             selectAllCheckbox: true,
             collapsed: true,
             children: [
-                { label: "Trapperspåret", layer: groups.trapper },
-                { label: "Vildmarksspåret", layer: groups.wildernesstrail },
-                { label: "Samarbetsgläntan", layer: groups.coopsite },
-                { label: "Hinderbanan", layer: groups.obstaclecourse },
-                { label: "Blood, sweat, tears and teamwork", layer: groups.bstt },
-                { label: "Naturnäran", layer: groups.naturetrail },
-                { label: "Bunkerspåret", layer: groups.bunkertrail },
-                { label: "Naturleken", layer: groups.naturegame },
-                { label: "Trädtränan", layer: groups.treetrail },
-                { label: "Ovan molnen", layer: groups.startrail },
-                { label: "Knopspåret", layer: groups.knottrail },
-                { label: "Träck track", layer: groups.pooptrail },
-                { label: "Woodcraftspåret", layer: groups.woodcrafttrail },
+                { label: "Trapperspåret", layer: GROUPS.trapper },
+                { label: "Vildmarksspåret", layer: GROUPS.wildernesstrail },
+                { label: "Samarbetsgläntan", layer: GROUPS.coopsite },
+                { label: "Hinderbanan", layer: GROUPS.obstaclecourse },
+                { label: "Blood, sweat, tears and teamwork", layer: GROUPS.bstt },
+                { label: "Naturnäran", layer: GROUPS.naturetrail },
+                { label: "Bunkerspåret", layer: GROUPS.bunkertrail },
+                { label: "Naturleken", layer: GROUPS.naturegame },
+                { label: "Trädtränan", layer: GROUPS.treetrail },
+                { label: "Ovan molnen", layer: GROUPS.startrail },
+                { label: "Knopspåret", layer: GROUPS.knottrail },
+                { label: "Träck track", layer: GROUPS.pooptrail },
+                { label: "Woodcraftspåret", layer: GROUPS.woodcrafttrail },
             ]
         },
         {
@@ -97,11 +97,11 @@ var overlaysTree = {
             selectAllCheckbox: true,
             collapsed: true,
             children: [
-                { label: "Vässarö runt", layer: groups.vassarorunt },
-                { label: "Berättelsen", layer: groups.beachtrail },
-                { label: "Rosa spåret", layer: groups.pinktrail },
-                { label: "Gula spåret", layer: groups.yellowtrail },
-                { label: "Genvägar", layer: groups.shortcuts },
+                { label: "Vässarö runt", layer: GROUPS.vassarorunt },
+                { label: "Berättelsen", layer: GROUPS.beachtrail },
+                { label: "Rosa spåret", layer: GROUPS.pinktrail },
+                { label: "Gula spåret", layer: GROUPS.yellowtrail },
+                { label: "Genvägar", layer: GROUPS.shortcuts },
             ]
         },
         {
@@ -109,10 +109,10 @@ var overlaysTree = {
             selectAllCheckbox: true,
             collapsed: true,
             children: [
-                { label: "Miniorienteringen", layer: groups.miniorientering },
-                { label: "Fotoorienteringen", layer: groups.fotoorientering },
-                { label: "Centrala ön", layer: groups.centralorientering },
-                { label: "Hela ön", layer: groups.allorientering },
+                { label: "Miniorienteringen", layer: GROUPS.miniorientering },
+                { label: "Fotoorienteringen", layer: GROUPS.fotoorientering },
+                { label: "Centrala ön", layer: GROUPS.centralorientering },
+                { label: "Hela ön", layer: GROUPS.allorientering },
             ]
         },
         {
@@ -120,21 +120,21 @@ var overlaysTree = {
             selectAllCheckbox: true,
             collapsed: false,
             children: [
-                { label: "Naturhamnar", layer: groups.moorings },
-                { label: "Laddlådor", layer: groups.chargebox },
-                { label: "Dass", layer: groups.toilets },
-                { label: "Soprum", layer: groups.trashrooms },
-                // { label: "Områden", layer: groups.areas },
-                // { label: 'Lägerskola', layer: groups.ls }
+                { label: "Naturhamnar", layer: GROUPS.moorings },
+                { label: "Laddlådor", layer: GROUPS.chargebox },
+                { label: "Dass", layer: GROUPS.toilets },
+                { label: "Soprum", layer: GROUPS.trashrooms },
+                // { label: "Områden", layer: GROUPS.areas },
+                // { label: 'Lägerskola', layer: GROUPS.ls }
 
             ]
-            // "Lokaler": groups.bookablerooms,
+            // "Lokaler": GROUPS.bookablerooms,
         }
     ]
 }
 
 //Skapa en lista med källor för geojson-data
-var sources = [
+const SOURCES = [
     "data/trapper.geojson",
     "data/trails.geojson",
     "data/activitySites.geojson",
@@ -148,7 +148,7 @@ var sources = [
 ];
 
 // Hämta geoJSON-objekt från varje fil
-sources.forEach(source => {
+SOURCES.forEach(source => {
     fetch(source)
         .then(response => response.json())
         .then(data => {
@@ -159,10 +159,10 @@ sources.forEach(source => {
                     }
                     if (!feature.properties.skip) { // för att dölja vissa stigar
                         if (typeof (feature.properties.group) === 'string') {
-                            eval("groups." + feature.properties.group).addLayer(layer);
+                            GROUPS[feature.properties.group].addLayer(layer);
                         } else {
                             feature.properties.group.forEach(element => {
-                                eval("groups." + element).addLayer(layer);
+                                GROUPS[element].addLayer(layer);
                             })
                         }
                     }
@@ -170,7 +170,7 @@ sources.forEach(source => {
                 pointToLayer: function (feature, latlng) {
                     if (feature.properties.icon) {
                         thisMarker = L.marker(latlng, {
-                            icon: eval("icons." + feature.properties.icon),
+                            icon: ICONS[feature.properties.icon],
                         });
                     } else {
                         thisMarker = L.marker(latlng, {
@@ -193,7 +193,7 @@ sources.forEach(source => {
 });
 
 // Inställningar till lagerkontrollen
-var options = {
+const OPTIONS = {
     closedSymbol: '<i style="width:16px; text-align:center" class="fa fa-solid fa-chevron-right"></i>',
     openedSymbol: '<i style="width:16px; text-align:center" class="fa fa-solid fa-chevron-down"></i>',
     selectorBack: false,
@@ -206,7 +206,7 @@ var options = {
 
 // Fönster ut ur filen
 window.MapLayers = {
-    OverlaysTree: overlaysTree,
-    Basemaps: basemaps,
-    Options: options
+    OverlaysTree: OVERLAYS_TREE,
+    Basemaps: BASEMAPS,
+    Options: OPTIONS
 }
