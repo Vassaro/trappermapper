@@ -195,7 +195,7 @@ function getSources(sourceList) {
                                 });
                             } else {
                                 thisMarker = L.marker(latlng, {
-                                    icon: "../" + ICONS[feature.properties.icon],
+                                    icon: ICONS[ "../" + feature.properties.icon],
                                 });
                             }
                             thisMarker = L.marker(latlng, {
