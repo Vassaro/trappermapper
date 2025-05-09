@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Trappermapper</title>
-    <link rel="icon" type="image/x-icon" href="img/hollyrosa-square.png">
+    <title>Lägerskolekarta</title>
+    <link rel="icon" type="image/x-icon" href="/img/logotyp-ls.png">
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -12,19 +12,19 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
-    <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../src/L.Control.Locate.min.css" />
+    <script src="../src/L.Control.Locate.min.js" charset="utf-8"></script>
 
-    <script src="src/L.Control.Layers.Tree.js"></script>
-    <link rel="stylesheet" href="src/L.Control.Layers.Tree.css" />
+    <script src="../src/L.Control.Layers.Tree.js"></script>
+    <link rel="stylesheet" href="../src/L.Control.Layers.Tree.css" />
 
-    <link rel="stylesheet" href="src/leaflet-sidebar.css" />
-    <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
-    <script src="src/L.Control.Layers.Tree.js"></script>
+    <link rel="stylesheet" href="../src/leaflet-sidebar.css" />
+    <script src="../src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <script src="../src/L.Control.Layers.Tree.js"></script>
 
-    <link rel="stylesheet" href="style.css" />
-    <script src="icons.js"></script>
-    <script src="maplayers.js"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../icons.js"></script>
+    <script src="../maplayers.js"></script>
 
     <!--stulet från https://leafletjs.com/examples/mobile/example.html-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -40,11 +40,7 @@
                 <ul role="tablist">
                     <li><a href="#menu" role="tab"><i class="fa fa-solid fa-bars"></i></a></li>
                     <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
-                    <li><a href="#filter" id="filter" role="tab"><img src="icons/filter.svg" width="40px"></a></li>
-                    <li><a href="/lagerskola/"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga"
-                                width="40px"></a></li>
-                    <li><a href="/boomerang/"><img src="img/boomerang.png" alt="Boomeranglogga" width="30px"
-                                style="margin:5px"></a></li>
+                    <li><a href="../" id="filter" role="tab"><i class="fa fa-solid fa-chevron-left"></i></a></li>
                 </ul>
                 <ul role="tablist">
                     <div id="button-box"></div>
@@ -55,28 +51,21 @@
             <div class="sidebar-content">
                 <div class="sidebar-pane" id="menu">
                     <h1 class="sidebar-header">
-                        TRAPPERMAPPER
+                        LÄGERSKOLAN
                         <span class="sidebar-close"><i class="fa fa-times"></i></span>
                     </h1>
                     <p>Det här är en karta framtagen av programfunktionärerna på Vässarö. Använd den inte som ett
                         navigationsverktyg på vattnet.</p>
-                    <p>Under filtret till vänster kan du välja vad du vill se på kartan. Du kan också klicka på
-                        Äventyret
-                        Vässarö-loggan eller Boomerang-loggan till vänster för att endast se deras aktiviteter.</p>
-                    <p>Mer info om aktiviteterna, och om de som inte finns på kartan, finns i vår
-                        <a
-                            href="https://vassaro.se/wp-content/uploads/Programlunta-Ver-23.1.0.pdf">Programlunta</a>.</a>
-                    </p>
                     <p>Du kan hjälpa till med kartans utveckling genom att prata med oss på Lillgårn, mejla oss på
                         program(at)vassaro.se eller bidra på <a href="https://github.com/vassaro/trappermapper/"><i
-                                class="fa fa-github"></i> Github</a>.</p><br>
+                                class="fa fa-github"></i>
+                            Github</a>.</p><br>
                     <center>
-                        <p><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="60px"></p>
-                        <p><a href="https://vassaro.se/"><img src="img/vassaro_logga.jpg" alt="Vässarös logga"
-                                    width="75px"></a>&emsp;&emsp;&emsp;&emsp;<a href="https://aventyretvassaro.se/"><img
-                                    src="img/logotyp-ls.png" alt="Äventyrets Vässarös logga" width="75px"></a></p>
-                        <p><a href="https://scouterna.se/"><img src="img/Scoutsymbolen_rgb.png" alt="Scouternas logga"
-                                    width="75px"></a></p>
+                        <p><a href="https://aventyretvassaro.se/"><img src="/img/logotyp-ls.png"
+                                    alt="Äventyrets Vässarös logga" width="75px"></a></p>
+                        <p><a href="https://vassaro.se/"><img src="/img/vassaro_logga.jpg" alt="Vässarös logga"
+                                    width="75px"></a>&emsp;&emsp;&emsp;&emsp;<a href="https://scouterna.se/"><img
+                                    src="/img/Scoutsymbolen_rgb.png" alt="Scouternas logga" width="75px"></a></p>
                     </center>
                 </div>
 
@@ -85,12 +74,12 @@
                         QR-KOD
                         <span class="sidebar-close"><i class="fa fa-times"></i></span>
                     </h1>
-                    <p>Du hittar enklast tillbaka till den här kartan genom att spara länken eller skanna QR-koden med
-                        din
-                        mobilkamera:<br>
+                    <p>
+                        Du hittar enklast tillbaka till den här kartan genom att spara länken eller skanna QR-koden med
+                        din mobilkamera:<br>
                         <center>
-                            <img src="/img/qr/qr.trappermapper.png" alt="QR-kod som leder till den här kartan!"
-                                width="80%"><br>
+                            <img src="/img/qr/qr.trappermapper.lagerskola.png"
+                                alt="QR-kod som leder till den här kartan!" width="80%"><br>
                         </center>
                     </p>
                 </div>
@@ -114,10 +103,11 @@
             </div>
         </div>
     </div>
-    <script src="src/leaflet-sidebar.js" charset="utf-8"></script>
-    <script src="leaflet.js"></script>
+    <script src="../src/leaflet-sidebar.js" charset="utf-8"></script>
+    <script src="../leaflet.js"></script>
     <script>
         getSources(SOURCES);
+        lfmap.addLayer(GROUPS.ls);
     </script>
 </body>
 

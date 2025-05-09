@@ -45,6 +45,7 @@ const GROUPS = {
     miniorientering: new L.LayerGroup(),
     ls: new L.LayerGroup(),
     shortcuts: new L.LayerGroup(),
+    boomerang: new L.LayerGroup(),
 };
 
 //Grupperar kartlager
@@ -75,21 +76,46 @@ const OVERLAYS_TREE = {
         {
             label: "Programaktiviteter",
             selectAllCheckbox: true,
-            collapsed: true,
+            collapsed: false,
             children: [
-                { label: "Trapperspåret", layer: GROUPS.trapper },
-                { label: "Vildmarksspåret", layer: GROUPS.wildernesstrail },
-                { label: "Samarbetsgläntan", layer: GROUPS.coopsite },
-                { label: "Hinderbanan", layer: GROUPS.obstaclecourse },
-                { label: "Blood, sweat, tears and teamwork", layer: GROUPS.bstt },
-                { label: "Naturnäran", layer: GROUPS.naturetrail },
-                { label: "Bunkerspåret", layer: GROUPS.bunkertrail },
-                { label: "Naturleken", layer: GROUPS.naturegame },
-                { label: "Trädtränan", layer: GROUPS.treetrail },
-                { label: "Ovan molnen", layer: GROUPS.startrail },
-                { label: "Knopspåret", layer: GROUPS.knottrail },
-                { label: "Träck track", layer: GROUPS.pooptrail },
-                { label: "Woodcraftspåret", layer: GROUPS.woodcrafttrail },
+                {
+                    label: "Spår",
+                    selectAllCheckbox: true,
+                    collapsed: true,
+                    children: [
+                        { label: "Trapperspåret", layer: GROUPS.trapper },
+                        { label: "Vildmarksspåret", layer: GROUPS.wildernesstrail },
+                        { label: "Naturnäran", layer: GROUPS.naturetrail },
+                        { label: "Bunkerspåret", layer: GROUPS.bunkertrail },
+                        { label: "Naturleken", layer: GROUPS.naturegame },
+                        { label: "Trädtränan", layer: GROUPS.treetrail },
+                        { label: "Ovan molnen", layer: GROUPS.startrail },
+                        { label: "Knopspåret", layer: GROUPS.knottrail },
+                        { label: "Träck track", layer: GROUPS.pooptrail },
+                        { label: "Woodcraftspåret", layer: GROUPS.woodcrafttrail },
+                    ]
+                },
+                {
+                    label: "Platser",
+                    selectAllCheckbox: true,
+                    collapsed: true,
+                    children: [
+                        { label: "Samarbetsgläntan", layer: GROUPS.coopsite },
+                        { label: "Hinderbanan", layer: GROUPS.obstaclecourse },
+                        { label: "Blood, sweat, tears and teamwork", layer: GROUPS.bstt },
+                    ]
+                },
+                {
+                    label: "Orientering",
+                    selectAllCheckbox: true,
+                    collapsed: true,
+                    children: [
+                        { label: "Miniorienteringen", layer: GROUPS.miniorientering },
+                        { label: "Fotoorienteringen", layer: GROUPS.fotoorientering },
+                        { label: "Centrala ön", layer: GROUPS.centralorientering },
+                        { label: "Hela ön", layer: GROUPS.allorientering },
+                    ]
+                },
             ]
         },
         {
@@ -97,22 +123,11 @@ const OVERLAYS_TREE = {
             selectAllCheckbox: true,
             collapsed: true,
             children: [
-                { label: "Vässarö runt", layer: GROUPS.vassarorunt },
                 { label: "Berättelsen", layer: GROUPS.beachtrail },
                 { label: "Rosa spåret", layer: GROUPS.pinktrail },
                 { label: "Gula spåret", layer: GROUPS.yellowtrail },
                 { label: "Genvägar", layer: GROUPS.shortcuts },
-            ]
-        },
-        {
-            label: "Orientering",
-            selectAllCheckbox: true,
-            collapsed: true,
-            children: [
-                { label: "Miniorienteringen", layer: GROUPS.miniorientering },
-                { label: "Fotoorienteringen", layer: GROUPS.fotoorientering },
-                { label: "Centrala ön", layer: GROUPS.centralorientering },
-                { label: "Hela ön", layer: GROUPS.allorientering },
+                { label: "Vässarö runt", layer: GROUPS.vassarorunt },
             ]
         },
         {
@@ -126,7 +141,6 @@ const OVERLAYS_TREE = {
                 { label: "Soprum", layer: GROUPS.trashrooms },
                 // { label: "Områden", layer: GROUPS.areas },
                 // { label: 'Lägerskola', layer: GROUPS.ls }
-
             ]
             // "Lokaler": GROUPS.bookablerooms,
         }
@@ -135,62 +149,65 @@ const OVERLAYS_TREE = {
 
 //Skapa en lista med källor för geojson-data
 const SOURCES = [
-    "data/trapper.geojson",
-    "data/trails.geojson",
-    "data/activitySites.geojson",
-    "data/moorings.geojson",
-    "data/campfireSites.geojson",
-    "data/chargeboxes.geojson",
-    "data/toilets.geojson",
-    "data/trashrooms.geojson",
-    // "data/areas.geojson",
-    "data/orientering.geojson",
+    "/data/trapper.geojson",
+    "/data/trails.geojson",
+    "/data/activitySites.geojson",
+    "/data/moorings.geojson",
+    "/data/campfireSites.geojson",
+    "/data/chargeboxes.geojson",
+    "/data/toilets.geojson",
+    "/data/trashrooms.geojson",
+    // "/data/areas.geojson",
+    "/data/orientering.geojson",
 ];
 
 // Hämta geoJSON-objekt från varje fil
-SOURCES.forEach(source => {
-    fetch(source)
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data, {
-                onEachFeature: function (feature, layer) {
-                    if (feature.properties.title) {
-                        layer.bindPopup("<b>" + feature.properties.title + "</b><br>" + feature.properties.desc);
-                    }
-                    if (!feature.properties.skip) { // för att dölja vissa stigar
-                        if (typeof (feature.properties.group) === 'string') {
-                            GROUPS[feature.properties.group].addLayer(layer);
-                        } else {
-                            feature.properties.group.forEach(element => {
-                                GROUPS[element].addLayer(layer);
-                            })
+function getSources(sourceList) {
+    sourceList.forEach(source => {
+        fetch(source)
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    onEachFeature: function (feature, layer) {
+                        if (feature.properties.title) {
+                            layer.bindPopup("<b>" + feature.properties.title + "</b><br>" + feature.properties.desc);
                         }
+                        if (!feature.properties.skip) { // för att dölja vissa stigar
+                            if (typeof (feature.properties.group) === 'string') {
+                                GROUPS[feature.properties.group].addLayer(layer);
+                            } else {
+                                feature.properties.group.forEach(element => {
+                                    GROUPS[element].addLayer(layer);
+                                })
+                            }
+                        }
+                    },
+                    pointToLayer: function (feature, latlng) {
+                        if (feature.properties.icon) {
+                            thisMarker = L.marker(latlng, {
+                                icon: ICONS[feature.properties.icon],
+                            });
+                        } else {
+                            thisMarker = L.marker(latlng, {
+                            });
+                        }
+                        return thisMarker;
+                    },
+                    style: function (feature) {
+                        return {
+                            color: feature.properties.color,
+                            weight: 10,
+                            opacity: 0.7,
+                        };
                     }
-                },
-                pointToLayer: function (feature, latlng) {
-                    if (feature.properties.icon) {
-                        thisMarker = L.marker(latlng, {
-                            icon: ICONS[feature.properties.icon],
-                        });
-                    } else {
-                        thisMarker = L.marker(latlng, {
-                        });
-                    }
-                    return thisMarker;
-                },
-                style: function (feature) {
-                    return {
-                        color: feature.properties.color,
-                        weight: 10,
-                        opacity: 0.7,
-                    };
-                }
+                });
+            })
+            .catch(error => {
+                console.error('Error loading GeoJSON:', error);
             });
-        })
-        .catch(error => {
-            console.error('Error loading GeoJSON:', error);
-        });
-});
+    });
+};
+
 
 // Inställningar till lagerkontrollen
 const OPTIONS = {

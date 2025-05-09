@@ -10,4 +10,4 @@ Either:
 - Go to https://vassaro.github.io/trappermapper/.
 - Scan the following QR code: 
   
-  ![QR code that lead to the map.](/img/qr/qr-hollyrosa2.png "QR code that lead to the map.")
+  ![QR code that lead to the map.](/img/qr/qr.trappermapper.png.png "QR code that lead to the map.")

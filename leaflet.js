@@ -30,14 +30,6 @@ const LC = L.control
         }
     }).addTo(lfmap);
 
-// Skapa fullskärmskontrollen med egen text
-const FULLSCREEN = L.control.fullscreen({
-  title: {
-    "false": "Fullskärmsläge",
-    "true": "Återgå till normalläge"
-  }
-}).addTo(lfmap);
-
 // Lägg till zoom-kontroll
 const ZOOM = L.control.zoom().addTo(lfmap)
 
@@ -48,7 +40,7 @@ const SCALE = L.control.scale({
 }).addTo(lfmap)
 
 // Flytta knappar till sidomenyn eller filtermenyn.
-const OBJECTS = [FULLSCREEN, LC, ZOOM]
+const OBJECTS = [LC, ZOOM]
 const BUTTON_BOX = document.getElementById('button-box')
 const FILTER_BOX = document.getElementById('filter-box')
 function setParent(child, newParent) {
@@ -58,22 +50,6 @@ OBJECTS.forEach(element => {
     setParent(element, BUTTON_BOX);
 });
 setParent(LAYER_CONTROL, FILTER_BOX);
-
-// Switch lägerskole view
-document.getElementById("lagerskola").addEventListener('click', e => {
-    if (lfmap.hasLayer(GROUPS.ls)) {
-        lfmap.removeLayer(GROUPS.ls)
-        document.getElementById("lagerskola").style.backgroundColor = "transparent";
-    } else { // Remove every layer and add lägerskole layer
-        lfmap.eachLayer(function (layer) {
-            if (!!layer.toGeoJSON) {
-                lfmap.removeLayer(layer);
-            }
-        });
-        lfmap.addLayer(GROUPS.ls);
-        document.getElementById("lagerskola").style.backgroundColor = "#003660";
-    }
-});
 
 // Switch basemap
 if (document.querySelector('input[name="selectBackground"]')) {
