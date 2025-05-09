@@ -88,3 +88,8 @@ const ICONS = {
         popupAnchor: [0, -60]
     })
 };
+
+// Fönster ut ur filen
+window.Icons = {
+    IconList: ICONS
+};
