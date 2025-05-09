@@ -189,6 +189,15 @@ function getSources(sourceList) {
                     },
                     pointToLayer: function (feature, latlng) {
                         if (feature.properties.icon) {
+                            if (pathName == "/" || pathName == "/trappermapper/") {
+                                thisMarker = L.marker(latlng, {
+                                    icon: ICONS[feature.properties.icon],
+                                });
+                            } else {
+                                thisMarker = L.marker(latlng, {
+                                    icon: "../" + ICONS[feature.properties.icon],
+                                });
+                            }
                             thisMarker = L.marker(latlng, {
                                 icon: ICONS[feature.properties.icon],
                             });
