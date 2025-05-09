@@ -4,7 +4,7 @@ var baseUrl;
 if (pathName == "/") {
     baseUrl = document.location.origin;
 } else if (pathName == "/trappermapper/") {
-    baseUrl = "./";
+    baseUrl = "/trappermapper";
 } else {
     baseUrl =  "../";
 };
