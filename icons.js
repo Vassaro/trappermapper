@@ -1,6 +1,13 @@
 // icons.js
-
-baseUrl = document.location.origin
+var pathName = document.location.pathname;
+var baseUrl;
+if (pathName == "/") {
+    baseUrl = document.location.origin;
+} else if (pathName == "/trappermapper/") {
+    baseUrl = "";
+} else {
+    baseUrl =  "../";
+};
 
 const ICONS = {
     firehousePin: new L.Icon({
