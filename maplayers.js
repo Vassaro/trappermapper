@@ -189,6 +189,7 @@ function getSources(sourceList) {
                     },
                     pointToLayer: function (feature, latlng) {
                         if (feature.properties.icon) {
+                            console.log(Icons.IconList[feature.properties.icon])
                             thisMarker = L.marker(latlng, {
                                 icon: Icons.IconList[feature.properties.icon],
                             });
