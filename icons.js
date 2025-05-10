@@ -3,10 +3,14 @@ var pathName = document.location.pathname;
 var baseUrl;
 if (pathName == "/") {
     baseUrl = document.location.origin;
+    console.log("Case 1, '/'");
 } else if (pathName == "/trappermapper/") {
     baseUrl = "/trappermapper";
+    console.log("Case 1, '/trappermapper/'");
 } else {
     baseUrl =  "../";
+    console.log("Case 1, 'else'");
+
 };
 
 const ICONS = {
