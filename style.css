@@ -1,18 +1,18 @@
 :root {
-  --accent-color: #003660;
-  --text-color: #000000;
-  --manifold-color: #e1e1e1;
-  --std-font: "Open Sans";
+	--accent-color: #003660;
+	--text-color: #000000;
+	--manifold-color: #e1e1e1;
+	--std-font: "Open Sans";
 }
 
 body {
 	margin: 0;
 	padding: 0;
-  font-family: var(--std-font);
+	font-family: var(--std-font);
 }
 
 p {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 html,
@@ -23,24 +23,29 @@ body,
 	z-index: 0;
 }
 
-.sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
-  color: #fff;
-  background-color: var(--accent-color); 
+.sidebar-tabs>li.active,
+.sidebar-tabs>ul>li.active {
+	color: #fff;
+	background-color: var(--accent-color);
 }
 
 .sidebar-header {
-  background-color: var(--accent-color);
+	background-color: var(--accent-color);
 }
 
 .leaflet-control-layers {
-  border: none !important;
-  background: none !important;
+	border: none !important;
+	background: none !important;
 }
 
 .leaflet-touch .leaflet-bar a {
 	width: 40px;
 	height: 40px;
 	line-height: 40px;
+}
+
+.sidebar.collapsed {
+	width: 40px;
 }
 
 .leaflet-control-zoom-in,
@@ -55,13 +60,13 @@ body,
 	font-size: 40px;
 	margin: 0px;
 	border: none;
-  color: #000000;
+	color: #000000;
 }
 
 .leaflet-layerstree-header-name {
-    font-size: 12pt;
-    font-weight: normal;
-    margin-left: 0px;
+	font-size: 12pt;
+	font-weight: normal;
+	margin-left: 0px;
 	margin-right: 0px;
 }
 
@@ -88,12 +93,12 @@ body,
 }
 
 .leaflet-container {
-  font-size: 12pt !important;
-  font-family: var(--std-font) !important;
+	font-size: 12pt !important;
+	font-family: var(--std-font) !important;
 }
 
 input[type='checkbox'],
-input[type='radio']{
+input[type='radio'] {
 	accent-color: var(--accent-color);
 }
 

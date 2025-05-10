@@ -3,8 +3,11 @@
 
 <head>
     <title>Lägerskolekarta</title>
-    <link rel="icon" type="image/x-icon" href="../img/logotyp-ls.png">
+    <link rel="icon" type="image/x-icon" href="/img/logotyp-ls.png">
     <meta charset="utf-8" />
+
+    <!-- Base URL -->
+    <base href ="/lagerskola/" />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -12,19 +15,19 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <link rel="stylesheet" href="../src/L.Control.Locate.min.css" />
-    <script src="../src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/src/L.Control.Locate.min.css" />
+    <script src="/src/L.Control.Locate.min.js" charset="utf-8"></script>
 
-    <script src="../src/L.Control.Layers.Tree.js"></script>
-    <link rel="stylesheet" href="../src/L.Control.Layers.Tree.css" />
+    <script src="/src/L.Control.Layers.Tree.js"></script>
+    <link rel="stylesheet" href="/src/L.Control.Layers.Tree.css" />
 
-    <link rel="stylesheet" href="../src/leaflet-sidebar.css" />
-    <script src="../src/L.Control.Locate.min.js" charset="utf-8"></script>
-    <script src="../src/L.Control.Layers.Tree.js"></script>
+    <link rel="stylesheet" href="/src/leaflet-sidebar.css" />
+    <script src="/src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <script src="/src/L.Control.Layers.Tree.js"></script>
 
-    <link rel="stylesheet" href="../style.css" />
-    <script src="../icons.js"></script>
-    <script src="../maplayers.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/icons.js"></script>
+    <script src="/maplayers.js"></script>
 
     <!--stulet från https://leafletjs.com/examples/mobile/example.html-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -61,11 +64,11 @@
                                 class="fa fa-github"></i>
                             Github</a>.</p><br>
                     <center>
-                        <p><a href="https://aventyretvassaro.se/"><img src="../img/logotyp-ls.png"
+                        <p><a href="https://aventyretvassaro.se/"><img src="/img/logotyp-ls.png"
                                     alt="Äventyrets Vässarös logga" width="75px"></a></p>
-                        <p><a href="https://vassaro.se/"><img src="../img/vassaro_logga.jpg" alt="Vässarös logga"
+                        <p><a href="https://vassaro.se/"><img src="/img/vassaro_logga.jpg" alt="Vässarös logga"
                                     width="75px"></a>&emsp;&emsp;&emsp;&emsp;<a href="https://scouterna.se/"><img
-                                    src="../img/Scoutsymbolen_rgb.png" alt="Scouternas logga" width="75px"></a></p>
+                                    src="/img/Scoutsymbolen_rgb.png" alt="Scouternas logga" width="75px"></a></p>
                     </center>
                 </div>
 
@@ -78,7 +81,7 @@
                         Du hittar enklast tillbaka till den här kartan genom att spara länken eller skanna QR-koden med
                         din mobilkamera:<br>
                         <center>
-                            <img src="../img/qr/qr.trappermapper.lagerskola.png"
+                            <img src="/img/qr/qr.trappermapper.lagerskola.png"
                                 alt="QR-kod som leder till den här kartan!" width="80%"><br>
                         </center>
                     </p>
@@ -103,9 +106,10 @@
             </div>
         </div>
     </div>
-    <script src="../src/leaflet-sidebar.js" charset="utf-8"></script>
-    <script src="../leaflet.js"></script>
+    <script src="/src/leaflet-sidebar.js" charset="utf-8"></script>
+    <script src="/leaflet.js"></script>
     <script>
+        // Import map items, add only ls layer.
         getSources(SOURCES);
         lfmap.addLayer(GROUPS.ls);
     </script>

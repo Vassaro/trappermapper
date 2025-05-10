@@ -149,27 +149,29 @@ const OVERLAYS_TREE = {
 
 //Skapa en lista med källor för geojson-data
 const SOURCES = [
-    "data/trapper.geojson",
-    "data/trails.geojson",
-    "data/activitySites.geojson",
-    "data/moorings.geojson",
-    "data/campfireSites.geojson",
-    "data/chargeboxes.geojson",
-    "data/toilets.geojson",
-    "data/trashrooms.geojson",
-    "data/orientering.geojson",
+    "/data/trapper.geojson",
+    "/data/trails.geojson",
+    "/data/activitySites.geojson",
+    "/data/moorings.geojson",
+    "/data/campfireSites.geojson",
+    "/data/chargeboxes.geojson",
+    "/data/toilets.geojson",
+    "/data/trashrooms.geojson",
+    "/data/orientering.geojson",
 ];
 
-// Hämta geoJSON-objekt från varje fil
+// Get geoJSON-features from a file
 function getSources(sourceList) {
     sourceList.forEach(source => {
-        var pathName = document.location.pathname;
-        if (pathName == "/" || pathName == "/trappermapper/") {
-            sourceUrl = source;
-        } else {
-            sourceUrl = "../" + source;
-        }
-        fetch(sourceUrl)
+        // var pathName = document.location.pathname;
+        // if (pathName == "/" || pathName == "/trappermapper/") {
+        //     console.log("case 1");
+        //     sourceUrl = source;
+        // } else {
+        //     console.log("case 2");
+        //     sourceUrl = "../" + source;
+        // }
+        fetch(source)
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {
