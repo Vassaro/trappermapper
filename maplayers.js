@@ -46,6 +46,8 @@ const GROUPS = {
     ls: new L.LayerGroup(),
     shortcuts: new L.LayerGroup(),
     boomerang: new L.LayerGroup(),
+    fladan: new L.LayerGroup(),
+
 };
 
 //Grupperar kartlager
@@ -105,17 +107,6 @@ const OVERLAYS_TREE = {
                         { label: "Blood, sweat, tears and teamwork", layer: GROUPS.bstt },
                     ]
                 },
-                {
-                    label: "Orientering",
-                    selectAllCheckbox: true,
-                    collapsed: true,
-                    children: [
-                        { label: "Miniorienteringen", layer: GROUPS.miniorientering },
-                        { label: "Fotoorienteringen", layer: GROUPS.fotoorientering },
-                        { label: "Centrala ön", layer: GROUPS.centralorientering },
-                        { label: "Hela ön", layer: GROUPS.allorientering },
-                    ]
-                },
             ]
         },
         {
@@ -131,10 +122,22 @@ const OVERLAYS_TREE = {
             ]
         },
         {
+            label: "Orienteringskartor",
+            selectAllCheckbox: true,
+            collapsed: true,
+            children: [
+                { label: "Miniorienteringen", layer: GROUPS.miniorientering },
+                { label: "Fotoorienteringen", layer: GROUPS.fotoorientering },
+                { label: "Centrala ön", layer: GROUPS.centralorientering },
+                { label: "Hela ön", layer: GROUPS.allorientering },
+            ]
+        },
+        {
             label: "Annat",
             selectAllCheckbox: true,
             collapsed: false,
             children: [
+                { label: "Fladan", layer: GROUPS.fladan },
                 { label: "Naturhamnar", layer: GROUPS.moorings },
                 { label: "Laddlådor", layer: GROUPS.chargebox },
                 { label: "Dass", layer: GROUPS.toilets },
@@ -189,7 +192,6 @@ function getSources(sourceList) {
                     },
                     pointToLayer: function (feature, latlng) {
                         if (feature.properties.icon) {
-                            console.log(Icons.IconList[feature.properties.icon])
                             thisMarker = L.marker(latlng, {
                                 icon: Icons.IconList[feature.properties.icon],
                             });
