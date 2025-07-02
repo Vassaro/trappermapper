@@ -11,7 +11,10 @@
                         "title": "Blood, Sweat, Tears and Teamwork",
                         "desc": "Aktiviteten är här.",
                         "icon": "hollyrosaFlag",
-                        "group": ["bstt","ls"]
+                        "group": [
+                            "bstt",
+                            "ls"
+                        ]
                     },
                     "geometry": {
                         "type": "Point",
@@ -27,7 +30,10 @@
                         "title": "Blood, Sweat, Tears and Teamwork",
                         "desc": "Följ stigen bakom cirkus!",
                         "icon": "startFlag",
-                        "group": ["bstt","ls"]
+                        "group": [
+                            "bstt",
+                            "ls"
+                        ]
                     },
                     "geometry": {
                         "type": "Point",
@@ -43,7 +49,10 @@
                         "title": "Stig till BSTT",
                         "desc": "",
                         "color": "yellow",
-                        "group": ["bstt","ls"]
+                        "group": [
+                            "bstt",
+                            "ls"
+                        ]
                     },
                     "geometry": {
                         "type": "LineString",
@@ -141,7 +150,10 @@
                         "stroke-opacity": 1,
                         "fill": "#555555",
                         "fill-opacity": 0.25,
-                        "group": ["bstt","ls"]
+                        "group": [
+                            "bstt",
+                            "ls"
+                        ]
                     },
                     "geometry": {
                         "coordinates": [
@@ -203,7 +215,10 @@
                         "title": "Samarbetsgläntan",
                         "desc": "Aktiviteten är här, följ stigen förbi 10-dasset.",
                         "icon": "hollyrosaFlag",
-                        "group": ["coopsite","ls"]
+                        "group": [
+                            "coopsite",
+                            "ls"
+                        ]
                     },
                     "geometry": {
                         "coordinates": [
@@ -223,7 +238,10 @@
                         "stroke-opacity": 1,
                         "fill": "#555555",
                         "fill-opacity": 0.25,
-                        "group": ["coopsite","ls"]
+                        "group": [
+                            "coopsite",
+                            "ls"
+                        ]
                     },
                     "geometry": {
                         "coordinates": [
@@ -270,7 +288,10 @@
                             "stroke-opacity": 1,
                             "fill": "#555555",
                             "fill-opacity": 0.25,
-                            "group": ["obstaclecourse","ls"]
+                            "group": [
+                                "obstaclecourse",
+                                "ls"
+                            ]
                         },
                         "type": "Polygon"
                     }
@@ -287,7 +308,10 @@
                         "title": "Hinderbanan",
                         "desc": "Följ stigen från vägen efter TC!",
                         "icon": "hollyrosaFlag",
-                        "group": ["obstaclecourse","ls"]
+                        "group": [
+                            "obstaclecourse",
+                            "ls"
+                        ]
                     },
                     "geometry": {
                         "type": "Point",
@@ -308,7 +332,10 @@
                         "stroke-opacity": 1,
                         "fill": "#555555",
                         "fill-opacity": 0.25,
-                        "group": ["obstaclecourse","ls"]
+                        "group": [
+                            "obstaclecourse",
+                            "ls"
+                        ]
                     },
                     "geometry": {
                         "coordinates": [
@@ -430,7 +457,10 @@
                 "title": "Träck track",
                 "desc": "Här börjar Träck track! Spåret går genom skogen.",
                 "icon": "hollyrosaFlag",
-                "group": ["pooptrail","ls"]
+                "group": [
+                    "pooptrail",
+                    "ls"
+                ]
             },
             "geometry": {
                 "coordinates": [
@@ -863,6 +893,24 @@
                         "coordinates": [
                             18.6936835235839,
                             60.255732928777036
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "title": "Fladan",
+                        "desc": "Samlingsplats för sjöaktiviteter.",
+                        "icon": "hollyrosaFlag",
+                        "group": [
+                            "fladan"
+                        ]
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            18.69766362835881,
+                            60.26109278982332
                         ],
                         "type": "Point"
                     }
