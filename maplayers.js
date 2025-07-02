@@ -47,7 +47,7 @@ const GROUPS = {
     shortcuts: new L.LayerGroup(),
     boomerang: new L.LayerGroup(),
     fladan: new L.LayerGroup(),
-    
+
 };
 
 //Grupperar kartlager
@@ -192,7 +192,6 @@ function getSources(sourceList) {
                     },
                     pointToLayer: function (feature, latlng) {
                         if (feature.properties.icon) {
-                            console.log(Icons.IconList[feature.properties.icon])
                             thisMarker = L.marker(latlng, {
                                 icon: Icons.IconList[feature.properties.icon],
                             });
