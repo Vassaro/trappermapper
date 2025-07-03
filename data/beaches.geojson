@@ -1,0 +1,124 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Bastun",
+        "desc": "Boka bastun på Lillgårn",
+        "group": "beaches",
+        "icon": ""
+      },
+      "geometry": {
+        "coordinates": [
+          18.686146653126656,
+          60.258324719657736
+        ],
+        "type": "Point"
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Grisbukten",
+        "desc": "Vid överängen",
+        "group": "beaches",
+        "icon": ""
+      },
+      "geometry": {
+        "coordinates": [
+          18.70394387890113,
+          60.25092527625307
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Fladan",
+        "desc": "Bortanflr Fladan kan man bada i en vik.",
+        "group": "beaches",
+        "icon": ""
+      },
+      "geometry": {
+        "coordinates": [
+          18.700218046494882,
+          60.26189209392817
+        ],
+        "type": "Point"
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Hoppklipporna",
+        "desc": "Följ det orangea spåret från Fladanvägen!",
+        "group": "beaches",
+        "icon": ""
+      },
+      "geometry": {
+        "coordinates": [
+          18.691708032153286,
+          60.262131575251146
+        ],
+        "type": "Point"
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Fladan",
+        "desc": "På andra sidan Fladan går det också bra",
+        "group": "beaches",
+        "icon": ""
+      },
+      "geometry": {
+        "coordinates": [
+          18.703105193789526,
+          60.261203677999674
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Södra stranden",
+        "desc": "Långgrund sandstrand",
+        "group": "beaches",
+        "icon": ""
+      },
+      "geometry": {
+        "coordinates": [
+          18.69683050539288,
+          60.24802480692958
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Betongbryggan",
+        "desc": "Brygga av betong",
+        "group": "beaches",
+        "icon": ""
+      },
+      "geometry": {
+        "coordinates": [
+          18.68273489417271,
+          60.25068706181972
+        ],
+        "type": "Point"
+      },
+      "id": 6
+    }
+  ]
+}

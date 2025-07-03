@@ -47,7 +47,7 @@ const GROUPS = {
     shortcuts: new L.LayerGroup(),
     boomerang: new L.LayerGroup(),
     fladan: new L.LayerGroup(),
-
+    beaches: new L.LayerGroup()
 };
 
 //Grupperar kartlager
@@ -139,6 +139,7 @@ const OVERLAYS_TREE = {
             children: [
                 { label: "Fladan", layer: GROUPS.fladan },
                 { label: "Naturhamnar", layer: GROUPS.moorings },
+                { label: "Badplatser", layer: GROUPS.beaches },
                 { label: "Laddlådor", layer: GROUPS.chargebox },
                 { label: "Dass", layer: GROUPS.toilets },
                 { label: "Soprum", layer: GROUPS.trashrooms },
@@ -161,6 +162,7 @@ const SOURCES = [
     "data/toilets.geojson",
     "data/trashrooms.geojson",
     "data/orientering.geojson",
+    "data/beaches.geojson"
 ];
 
 // Hämta geoJSON-objekt från varje fil
