@@ -121,17 +121,17 @@ const OVERLAYS_TREE = {
                 { label: "Vässarö runt", layer: GROUPS.vassarorunt },
             ]
         },
-        {
-            label: "Orienteringskartor",
-            selectAllCheckbox: true,
-            collapsed: true,
-            children: [
-                { label: "Miniorienteringen", layer: GROUPS.miniorientering },
-                { label: "Fotoorienteringen", layer: GROUPS.fotoorientering },
-                { label: "Centrala ön", layer: GROUPS.centralorientering },
-                { label: "Hela ön", layer: GROUPS.allorientering },
-            ]
-        },
+        // {
+        //     label: "Orienteringskartor",
+        //     selectAllCheckbox: true,
+        //     collapsed: true,
+        //     children: [
+        //         { label: "Miniorienteringen", layer: GROUPS.miniorientering },
+        //         { label: "Fotoorienteringen", layer: GROUPS.fotoorientering },
+        //         { label: "Centrala ön", layer: GROUPS.centralorientering },
+        //         { label: "Hela ön", layer: GROUPS.allorientering },
+        //     ]
+        // },
         {
             label: "Annat",
             selectAllCheckbox: true,

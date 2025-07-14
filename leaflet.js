@@ -1,4 +1,4 @@
-// Skapar kartan med restriktioner på zoom -->
+// Skapar kartan med restriktioner på zoom
 var lfmap = L.map('map', {
     center: [60.25542, 18.69360],
     zoom: 14,
@@ -20,18 +20,9 @@ lfmap.on('drag', function () {
 const LAYER_CONTROL = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
 
 // Lägg till sidomeny till kartan.
-const SIDEBAR = L.control.sidebar('sidebar').addTo(lfmap);
-
-// Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
-const LC = L.control
-    .locate({
-        strings: {
-            title: "Visar din nuvarande position!"
-        }
-    }).addTo(lfmap);
-
-// Lägg till zoom-kontroll
-const ZOOM = L.control.zoom().addTo(lfmap)
+const SIDEBAR = L.control.sidebar('sidebar', {
+    position: 'left',
+}).addTo(lfmap);
 
 // Skapa skalan
 const SCALE = L.control.scale({
@@ -39,8 +30,17 @@ const SCALE = L.control.scale({
     metric: true,
 }).addTo(lfmap)
 
+// Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
+const LC = L.control
+    .locate({
+        strings: {
+            title: "Visar din nuvarande position!"
+        },
+        position: "topright",
+    }).addTo(lfmap);
+
 // Flytta knappar till sidomenyn eller filtermenyn.
-const OBJECTS = [LC, ZOOM]
+const OBJECTS = []
 const BUTTON_BOX = document.getElementById('button-box')
 const FILTER_BOX = document.getElementById('filter-box')
 function setParent(child, newParent) {
