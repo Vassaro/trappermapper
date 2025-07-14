@@ -31,89 +31,88 @@
 </head>
 
 <body>
-    <div id="map">
+    <div id="map"></div>
 
-        <!--Allt inuti div#map kommer vara kvar när kartan byter till fullskärm-->
-        <div id="sidebar" class="sidebar collapsed">
-            <!-- Definiera flikar -->
-            <div class="sidebar-tabs">
-                <ul role="tablist">
-                    <li><a href="#menu" role="tab"><i class="fa fa-solid fa-bars"></i></a></li>
-                    <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
-                    <li><a href="#filter" id="filter" role="tab"><img src="icons/filter.svg" width="40px"></a></li>
-                    <!-- <li><a href="./lagerskola/"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga" -->
-                                <!-- width="40px"></a></li> -->
-                    <!-- <li><a href="./boomerang/"><img src="img/boomerang.png" alt="Boomeranglogga" width="30px" -->
-                                <!-- style="margin:5px"></a></li> -->
-                </ul>
-                <ul role="tablist">
-                    <div id="button-box"></div>
-                </ul>
+    <!--Allt inuti div#map kommer vara kvar när kartan byter till fullskärm-->
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Definiera flikar -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#menu" role="tab"><i class="fa fa-solid fa-bars"></i></a></li>
+                <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
+                <li><a href="#filter" id="filter" role="tab"><img src="icons/filter.svg" width="40px"></a></li>
+                <!-- <li><a href="./lagerskola/"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga" -->
+                <!-- width="40px"></a></li> -->
+                <!-- <li><a href="./boomerang/"><img src="img/boomerang.png" alt="Boomeranglogga" width="30px" -->
+                <!-- style="margin:5px"></a></li> -->
+            </ul>
+            <ul role="tablist">
+                <div id="button-box"></div>
+            </ul>
+        </div>
+
+        <!-- Flikpaneler och innehåll -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="menu">
+                <h1 class="sidebar-header">
+                    TRAPPERMAPPER
+                    <span class="sidebar-close"><i class="fa fa-times"></i></span>
+                </h1>
+                <p>Det här är en karta framtagen av programfunktionärerna på Vässarö. Använd den inte som ett
+                    navigationsverktyg på vattnet.</p>
+                <p>Under filtret till vänster kan du välja vad du vill se på kartan. Du kan också klicka på
+                    Äventyret
+                    Vässarö-loggan eller Boomerang-loggan till vänster för att endast se deras aktiviteter.</p>
+                <p>Mer info om aktiviteterna, och om de som inte finns på kartan, finns i vår
+                    <a href="https://vassaro.se/wp-content/uploads/Programlunta-Ver-23.1.0.pdf">Programlunta</a>.</a>
+                </p>
+                <p>Du kan hjälpa till med kartans utveckling genom att prata med oss på Lillgårn, mejla oss på
+                    program(at)vassaro.se eller bidra på <a href="https://github.com/vassaro/trappermapper/"><i
+                            class="fa fa-github"></i> Github</a>.</p><br>
+                <center>
+                    <p><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="60px"></p>
+                    <p><a href="https://vassaro.se/"><img src="img/vassaro_logga.jpg" alt="Vässarös logga"
+                                width="75px"></a>&emsp;&emsp;&emsp;&emsp;<a href="https://aventyretvassaro.se/"><img
+                                src="img/logotyp-ls.png" alt="Äventyrets Vässarös logga" width="75px"></a></p>
+                    <p><a href="https://scouterna.se/"><img src="img/Scoutsymbolen_rgb.png" alt="Scouternas logga"
+                                width="75px"></a></p>
+                </center>
             </div>
 
-            <!-- Flikpaneler och innehåll -->
-            <div class="sidebar-content">
-                <div class="sidebar-pane" id="menu">
-                    <h1 class="sidebar-header">
-                        TRAPPERMAPPER
-                        <span class="sidebar-close"><i class="fa fa-times"></i></span>
-                    </h1>
-                    <p>Det här är en karta framtagen av programfunktionärerna på Vässarö. Använd den inte som ett
-                        navigationsverktyg på vattnet.</p>
-                    <p>Under filtret till vänster kan du välja vad du vill se på kartan. Du kan också klicka på
-                        Äventyret
-                        Vässarö-loggan eller Boomerang-loggan till vänster för att endast se deras aktiviteter.</p>
-                    <p>Mer info om aktiviteterna, och om de som inte finns på kartan, finns i vår
-                        <a
-                            href="https://vassaro.se/wp-content/uploads/Programlunta-Ver-23.1.0.pdf">Programlunta</a>.</a>
-                    </p>
-                    <p>Du kan hjälpa till med kartans utveckling genom att prata med oss på Lillgårn, mejla oss på
-                        program(at)vassaro.se eller bidra på <a href="https://github.com/vassaro/trappermapper/"><i
-                                class="fa fa-github"></i> Github</a>.</p><br>
+            <div class="sidebar-pane" id="qr">
+                <h1 class="sidebar-header">
+                    QR-KOD
+                    <span class="sidebar-close"><i class="fa fa-times"></i></span>
+                </h1>
+                <p>Du hittar enklast tillbaka till den här kartan genom att spara länken eller skanna QR-koden med
+                    din
+                    mobilkamera:<br>
                     <center>
-                        <p><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="60px"></p>
-                        <p><a href="https://vassaro.se/"><img src="img/vassaro_logga.jpg" alt="Vässarös logga"
-                                    width="75px"></a>&emsp;&emsp;&emsp;&emsp;<a href="https://aventyretvassaro.se/"><img
-                                    src="img/logotyp-ls.png" alt="Äventyrets Vässarös logga" width="75px"></a></p>
-                        <p><a href="https://scouterna.se/"><img src="img/Scoutsymbolen_rgb.png" alt="Scouternas logga"
-                                    width="75px"></a></p>
+                        <img src="img/qr/qr.trappermapper.png" alt="QR-kod som leder till den här kartan!"
+                            width="80%"><br>
                     </center>
-                </div>
+                </p>
+            </div>
 
-                <div class="sidebar-pane" id="qr">
-                    <h1 class="sidebar-header">
-                        QR-KOD
-                        <span class="sidebar-close"><i class="fa fa-times"></i></span>
-                    </h1>
-                    <p>Du hittar enklast tillbaka till den här kartan genom att spara länken eller skanna QR-koden med
-                        din
-                        mobilkamera:<br>
-                        <center>
-                            <img src="img/qr/qr.trappermapper.png" alt="QR-kod som leder till den här kartan!"
-                                width="80%"><br>
-                        </center>
-                    </p>
-                </div>
+            <div class="sidebar-pane" id="filter">
+                <h1 class="sidebar-header">
+                    KARTFILTER
+                    <span class="sidebar-close"><i class="fa fa-times"></i></span>
+                </h1>
+                <div>
+                    <h4>KARTBAKGRUNDER</h4>
+                    <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
+                    <label for="osmRadio">OpenStreetMap</label><br>
+                    <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
+                    <label for="satRadio">Satellit</label>
 
-                <div class="sidebar-pane" id="filter">
-                    <h1 class="sidebar-header">
-                        KARTFILTER
-                        <span class="sidebar-close"><i class="fa fa-times"></i></span>
-                    </h1>
-                    <div>
-                        <h4>KARTBAKGRUNDER</h4>
-                        <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
-                        <label for="osmRadio">OpenStreetMap</label><br>
-                        <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
-                        <label for="satRadio">Satellit</label>
-
-                        <h4>KARTFILTER</h4>
-                        <div id="filter-box" style="padding-top: 0px;"></div>
-                    </div>
+                    <h4>KARTFILTER</h4>
+                    <div id="filter-box" style="padding-top: 0px;"></div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="src/leaflet-sidebar.js" charset="utf-8"></script>
     <script src="leaflet.js"></script>
     <script>
