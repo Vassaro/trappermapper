@@ -1,18 +1,18 @@
 :root {
-  --accent-color: #003660;
-  --text-color: #000000;
-  --manifold-color: #e1e1e1;
-  --std-font: "Open Sans";
+	--accent-color: #003660;
+	--text-color: #000000;
+	--manifold-color: #e1e1e1;
+	--std-font: "Open Sans";
 }
 
 body {
 	margin: 0;
 	padding: 0;
-  font-family: var(--std-font);
+	font-family: var(--std-font);
 }
 
 p {
-  color: var(--text-color);
+	color: var(--text-color);
 }
 
 html,
@@ -23,18 +23,31 @@ body,
 	z-index: 0;
 }
 
-.sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
-  color: #fff;
-  background-color: var(--accent-color); 
+.sidebar-tabs {
+	height: 120px;
+}
+
+#sidebar {
+	border: none;
+}
+
+#sidebar.collapsed {
+	height: 120px;
+}
+
+.sidebar-tabs>li.active,
+.sidebar-tabs>ul>li.active {
+	color: #fff;
+	background-color: var(--accent-color);
 }
 
 .sidebar-header {
-  background-color: var(--accent-color);
+	background-color: var(--accent-color);
 }
 
 .leaflet-control-layers {
-  border: none !important;
-  background: none !important;
+	border: none !important;
+	background: none !important;
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -43,25 +56,18 @@ body,
 	line-height: 40px;
 }
 
-.leaflet-control-zoom-in,
-.leaflet-control-zoom-out {
-	font: bold 35px 'Lucida Console', Monaco, monospace;
-	text-indent: 0px;
-	border: none
-}
-
 .leaflet-touch .leaflet-control-zoom-in,
 .leaflet-touch .leaflet-control-zoom-out {
 	font-size: 40px;
 	margin: 0px;
-	border: none;
-  color: #000000;
+	border: none !important;
+	color: #000000;
 }
 
 .leaflet-layerstree-header-name {
-    font-size: 12pt;
-    font-weight: normal;
-    margin-left: 0px;
+	font-size: 12pt;
+	font-weight: normal;
+	margin-left: 0px;
 	margin-right: 0px;
 }
 
@@ -74,30 +80,21 @@ body,
 	padding-left: 30px;
 }
 
-.leaflet-touch .leaflet-bar {
-	border: none;
-}
-
-.leaflet-control-locate a .leaflet-control-locate-location-arrow {
-	/* display: inline-block; */
-	padding: 0px;
-	width: 20px;
-	height: 20px;
-	margin: 10px;
-	text-indent: 0px;
-}
-
 .leaflet-container {
-  font-size: 12pt !important;
-  font-family: var(--std-font) !important;
+	font-size: 12pt !important;
+	font-family: var(--std-font) !important;
 }
 
 input[type='checkbox'],
-input[type='radio']{
+input[type='radio'] {
 	accent-color: var(--accent-color);
 }
 
 a:link,
 a:visited {
 	color: var(--accent-color);
+}
+
+.leaflet-control-layers .expanded {
+	margin-left: 0px;
 }
