@@ -84,3 +84,13 @@ a:visited {
 .leaflet-control-layers-overlays {
 	overflow-y: scroll;
 }
+
+@media screen and (max-width: 1023px) {
+  .navbar-dropdown {
+    display: none;
+  }
+
+  .navbar-item.has-dropdown.is-active .navbar-dropdown {
+    display: block;
+  }
+}

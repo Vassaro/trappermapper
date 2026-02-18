@@ -83,7 +83,7 @@
                     </a>
                     <div class="navbar-dropdown is-right">
                         <div class="navbar-item">
-                            <div class="content">
+                            <div class="content" style="max-width: 300px; min-width: 200px; text-wrap-mode: wrap;">
                                 <p>
                                     Det här är en karta framtagen av funktionärerna på Vässarö. Använd
                                     den inte som ett
@@ -121,15 +121,15 @@
                     </a>
                     <div class="navbar-dropdown is-right">
                         <div class="navbar-item">
-                            <div class="content">
+                            <div class="content" style="max-width: 300px; min-width: 200px; text-wrap-mode: wrap;">
                                 <p>
                                     Du hittar enklast tillbaka till den här kartan genom att spara
                                     länken eller skanna QR-koden med
                                     din mobilkamera:
                                 </p>
-                                <p>
+                                
                                     <img src="img/qr/qr.trappermapper.png" alt="QR-kod som leder till den här kartan!">
-                                </p>
+                                
                             </div>
                         </div>
                     </div>
@@ -161,6 +161,19 @@
                     el.classList.toggle('is-active');
                     $target.classList.toggle('is-active');
 
+                });
+            });
+
+            // Dropdown toggle for mobile
+            document.querySelectorAll('.navbar-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+
+                    const parent = this.parentElement;
+
+                    if (window.innerWidth <= 1023) {
+                        e.preventDefault();
+                        parent.classList.toggle('is-active');
+                    }
                 });
             });
         });
