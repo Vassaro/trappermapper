@@ -86,11 +86,17 @@ a:visited {
 }
 
 @media screen and (max-width: 1023px) {
-  .navbar-dropdown {
-    display: none;
-  }
+	.navbar-dropdown {
+		display: none;
+	}
 
-  .navbar-item.has-dropdown.is-active .navbar-dropdown {
-    display: block;
-  }
+	.navbar-item.has-dropdown.is-active .navbar-dropdown {
+		display: block;
+	}
+}
+
+.watermark {
+	position: absolute;
+	top: 80px;
+	transform: rotate(-45deg);
 }
