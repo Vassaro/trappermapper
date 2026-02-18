@@ -19,11 +19,6 @@ lfmap.on('drag', function () {
 // Lägg till lager och kontroller till kartan.
 const LAYER_CONTROL = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
 
-// Lägg till sidomeny till kartan.
-const SIDEBAR = L.control.sidebar('sidebar', {
-    position: 'left',
-}).addTo(lfmap);
-
 // Skapa skalan
 const SCALE = L.control.scale({
     position: "bottomright",
@@ -36,19 +31,14 @@ const LC = L.control
         strings: {
             title: "Visar din nuvarande position!"
         },
-        position: "topright",
+        position: "bottomleft",
     }).addTo(lfmap);
 
 // Flytta knappar till sidomenyn eller filtermenyn.
-const OBJECTS = []
-const BUTTON_BOX = document.getElementById('button-box')
 const FILTER_BOX = document.getElementById('filter-box')
 function setParent(child, newParent) {
     newParent.appendChild(child.getContainer());
 };
-OBJECTS.forEach(element => {
-    setParent(element, BUTTON_BOX);
-});
 setParent(LAYER_CONTROL, FILTER_BOX);
 
 // Switch basemap

@@ -2,7 +2,6 @@
 	--accent-color: #003660;
 	--text-color: #000000;
 	--manifold-color: #e1e1e1;
-	--std-font: "Open Sans";
 }
 
 body {
@@ -23,31 +22,10 @@ body,
 	z-index: 0;
 }
 
-.sidebar-tabs {
-	height: 120px;
-}
-
-#sidebar {
-	border: none;
-}
-
-#sidebar.collapsed {
-	height: 120px;
-}
-
-.sidebar-tabs>li.active,
-.sidebar-tabs>ul>li.active {
-	color: #fff;
-	background-color: var(--accent-color);
-}
-
-.sidebar-header {
-	background-color: var(--accent-color);
-}
-
 .leaflet-control-layers {
 	border: none !important;
 	background: none !important;
+	box-shadow: none;
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -81,7 +59,7 @@ body,
 }
 
 .leaflet-container {
-	font-size: 12pt !important;
+	font-size: 8pt !important;
 	font-family: var(--std-font) !important;
 }
 
@@ -97,4 +75,12 @@ a:visited {
 
 .leaflet-control-layers .expanded {
 	margin-left: 0px;
+}
+
+#navbar-top {
+	background-color: var(--manifold-color);
+}
+
+.leaflet-control-layers-overlays {
+	overflow-y: scroll;
 }
