@@ -1212,7 +1212,7 @@
                     "properties": {
                         "title": "Fladan",
                         "desc": "Samlingsplats för sjöaktiviteter.",
-                        "icon": "",
+                        "icon": "defaultPin",
                         "group": [
                             "fladan"
                         ]
@@ -1230,7 +1230,7 @@
                     "properties": {
                         "title": "Bikupan",
                         "desc": "Här finns Vässarös bikupa. Stick dit och titta :-)",
-                        "icon": "",
+                        "icon": "defaultPin",
                         "group": [
                             "apiary"
                         ]
