@@ -3,7 +3,7 @@
 
 <head>
     <title>Trappermapper</title>
-    <link rel="icon" type="image/x-icon" href="img/hollyrosa-square.png">
+    <link rel="icon" type="image/x-icon" href="/img/hollyrosa-square.png">
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -11,20 +11,20 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
-    <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="/src/L.Control.Locate.min.css" />
+    <script src="/src/L.Control.Locate.min.js" charset="utf-8"></script>
 
-    <script src="src/L.Control.Layers.Tree.js"></script>
-    <link rel="stylesheet" href="src/L.Control.Layers.Tree.css" />
+    <script src="/src/L.Control.Layers.Tree.js"></script>
+    <link rel="stylesheet" href="/src/L.Control.Layers.Tree.css" />
 
-    <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
-    <script src="src/L.Control.Layers.Tree.js"></script>
+    <script src="/src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <script src="/src/L.Control.Layers.Tree.js"></script>
 
-    <script src="src/leaflet.nauticalscale.js"></script>
+    <script src="/src/leaflet.nauticalscale.js"></script>
 
-    <link rel="stylesheet" href="style.css" />
-    <script src="icons.js"></script>
-    <script src="maplayers.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/icons.js"></script>
+    <script src="/maplayers.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 
@@ -40,35 +40,30 @@
 
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="navbar-top">
         <div class="navbar-brand">
-            <a class="navbar-item" href="./">
-                <img src="img/hollyrosa.svg">&nbsp;Trappermapper
+            <a class="navbar-item" href="/">
+                <img src="/img/hollyrosa.svg">&nbsp;Trappermapper
             </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-                <img src="icons/filter.svg">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu" style="display: none;">
+                <img src="/icons/filter.svg">
             </a>
 
         </div>
         <div class="navbar-menu" id="navMenu">
-            <div class="navbar-start">
+            <div class="navbar-start" style="display: none;">
             </div>
 
-            <div class="navbar-end">
-                <a class="navbar-item is-hidden-touch" href="./lagerskola"
-                    style="display: flex; align-items: center; gap: 10px;">
-                    <img src="/img/logotyp-ls.png">
-                    <span>Lägerskola</span>
-                </a>
-                <a class="navbar-item is-hidden-touch" href="./info.html">
+            <div class="navbar-end" style="display: none;">
+                <a class="navbar-item is-hidden-touch" href="/info.html">
                     <i class="fas fa-info"></i>Info
                 </a>
-                <a class="navbar-item is-hidden-touch" href="./qr.html">
+                <a class="navbar-item is-hidden-touch" href="/qr.html">
                     <i class="fas fa-qrcode"></i>QR
                 </a>
                 <hr class="navbar-divider">
                 <div class="navbar-item has-dropdown is-active is-hidden-touch">
                     <div class="navbar-dropdown is-right" style="overflow-y:scroll; max-height: calc(100vh - 100px);">
-                        <div class="navbar-item"><img src="img/hollyrosa.svg"><strong>Kartbakgrunder</strong></div>
+                        <div class="navbar-item"><img src="/img/hollyrosa.svg">Kartbakgrunder</div>
                         <div class="navbar-item">
                             <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
                             <label for="osmRadio">OpenStreetMap</label><br>
@@ -76,22 +71,18 @@
                             <label for="satRadio">Satellit</label>
                         </div>
                         <hr class="navbar-divider">
-                        <div class="navbar-item"><img src="icons/filter.svg"><strong>Kartfilter</strong></div>
+                        <div class="navbar-item"><img src="/icons/filter.svg">Kartfilter</div>
                         <div class="navbar-item" id="filter-box-desktop">
                         </div>
                     </div>
                 </div>
 
                 <div class="is-hidden-desktop">
-                    <a class="navbar-item" href="./info.html">
-                        <i class="fas fa-info"></i>&nbsp;Info
+                    <a class="navbar-item" href="/info.html">
+                        <i class="fas fa-info"></i>Info
                     </a>
-                    <a class="navbar-item" href="./qr.html">
-                        <i class="fas fa-qrcode"></i>&nbsp;QR
-                    </a>
-                    <a class="navbar-item" href="./lagerskola" style="display: flex; align-items: center; gap: 5px;">
-                        <img src="/img/logotyp-ls.png">
-                        <span>Lägerskola</span>
+                    <a class="navbar-item" href="/qr.html">
+                        <i class="fas fa-qrcode"></i>QR
                     </a>
                     <div class="navbar-item">
                         <strong>Kartbakgrunder</strong>
@@ -118,9 +109,10 @@
         Testversion!
     </div>
 
-    <script src="leaflet.js"></script>
+    <script src="/leaflet.js"></script>
     <script>
         getSources(SOURCES);
+        lfmap.addLayer(GROUPS.ls);
 
         document.addEventListener('DOMContentLoaded', () => {
 
