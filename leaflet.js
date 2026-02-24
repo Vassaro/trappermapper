@@ -20,10 +20,14 @@ lfmap.on('drag', function () {
 const LAYER_CONTROL = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
 
 // Skapa skalan
-const SCALE = L.control.scale({
+// const SCALE = L.control.scale({
+//     position: "bottomright",
+//     metric: true,
+// }).addTo(lfmap)
+const SCALE = new L.Control.ScaleNautical({
     position: "bottomright",
-    metric: true,
-}).addTo(lfmap)
+    maxWidth: 100
+}).addTo(lfmap);
 
 // Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
 const LC = L.control
