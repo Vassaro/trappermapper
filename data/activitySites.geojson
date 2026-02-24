@@ -1224,6 +1224,24 @@
                         ],
                         "type": "Point"
                     }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "title": "Bikupan",
+                        "desc": "Här finns Vässarös bikupa. Stick dit och titta :-)",
+                        "icon": "",
+                        "group": [
+                            "apiary"
+                        ]
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            18.698001,
+                            60.254192
+                        ],
+                        "type": "Point"
+                    }
                 }
             ]
         }
