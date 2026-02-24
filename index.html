@@ -20,7 +20,7 @@
     <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
     <script src="src/L.Control.Layers.Tree.js"></script>
 
-    <script src="src/leaflet.nauticalscale.js"></script> 
+    <script src="src/leaflet.nauticalscale.js"></script>
 
     <link rel="stylesheet" href="style.css" />
     <script src="icons.js"></script>
@@ -45,46 +45,58 @@
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <img src="icons/filter.svg">
             </a>
 
         </div>
         <div class="navbar-menu" id="navMenu">
             <div class="navbar-start">
-                <a class="navbar-item" href="./info.html">
-                    <i class="fas fa-info"></i>Info
-                </a>
-                <a class="navbar-item" href="./qr.html">
-                    <i class="fas fa-qrcode"></i>QR
-                </a>
             </div>
 
             <div class="navbar-end">
+                <a class="navbar-item is-hidden-touch" href="./info.html">
+                    <i class="fas fa-info"></i>Info
+                </a>
+                <a class="navbar-item is-hidden-touch" href="./qr.html">
+                    <i class="fas fa-qrcode"></i>QR
+                </a>
                 <hr class="navbar-divider">
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a role="button" class="navbar-link">
-                        <i class="fas fa-layer-group"></i>Kartbakgrunder
-                    </a>
-                    <div class="navbar-dropdown is-right">
+                <div class="navbar-item has-dropdown is-active is-hidden-touch">
+                    <div class="navbar-dropdown is-right" style="overflow-y:scroll; max-height: calc(100vh - 100px);">
+                        <div class="navbar-item"><img src="img/hollyrosa.svg">Kartbakgrunder</div>
                         <div class="navbar-item">
                             <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
                             <label for="osmRadio">OpenStreetMap</label><br>
                             <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
                             <label for="satRadio">Satellit</label>
                         </div>
+                        <hr class="navbar-divider">
+                        <div class="navbar-item"><img src="icons/filter.svg">Kartfilter</div>
+                        <div class="navbar-item" id="filter-box-desktop">
+                        </div>
                     </div>
                 </div>
 
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a role="button" class="navbar-link">
-                        <i class="fas fa-filter"></i>Kartfilter
+                <div class="is-hidden-desktop">
+                    <a class="navbar-item" href="./info.html">
+                        <i class="fas fa-info"></i>Info
                     </a>
-                    <div class="navbar-dropdown is-right">
-                        <div class="navbar-item" id="filter-box"></div>
+                    <a class="navbar-item" href="./qr.html">
+                        <i class="fas fa-qrcode"></i>QR
+                    </a>
+                    <div class="navbar-item">
+                        <strong>Kartbakgrunder</strong>
                     </div>
+                    <div class="navbar-item">
+                        <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
+                        <label for="osmRadio">OpenStreetMap</label><br>
+                        <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
+                        <label for="satRadio">Satellit</label>
+                    </div>
+                    <div class="navbar-item">
+                        <strong>Kartfilter</strong>
+                    </div>
+                    <div class="navbar-item" id="filter-box-mobile"></div>
                 </div>
             </div>
         </div>

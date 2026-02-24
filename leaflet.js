@@ -18,7 +18,7 @@ lfmap.on('drag', function () {
 
 // Lägg till lager och kontroller till kartan.
 const LAYER_CONTROL = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
-
+const LAYER_CONTROL_2 = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
 // Skapa skalan
 // const SCALE = L.control.scale({
 //     position: "bottomright",
@@ -39,11 +39,13 @@ const LC = L.control
     }).addTo(lfmap);
 
 // Flytta knappar till sidomenyn eller filtermenyn.
-const FILTER_BOX = document.getElementById('filter-box')
+const FILTER_BOX = document.getElementById('filter-box-desktop');
+const FILTER_BOX_2 = document.getElementById('filter-box-mobile');
 function setParent(child, newParent) {
     newParent.appendChild(child.getContainer());
 };
 setParent(LAYER_CONTROL, FILTER_BOX);
+setParent(LAYER_CONTROL_2, FILTER_BOX_2);
 
 // Switch basemap
 if (document.querySelector('input[name="selectBackground"]')) {
