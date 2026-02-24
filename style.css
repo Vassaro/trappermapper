@@ -2,6 +2,7 @@
 	--accent-color: #003660;
 	--text-color: #000000;
 	--manifold-color: #e1e1e1;
+    --bulma-link: #003660 !important;
 }
 
 body {
@@ -81,9 +82,6 @@ a:visited {
 	background-color: var(--manifold-color);
 }
 
-.leaflet-control-layers-overlays {
-	overflow-y: scroll;
-}
 
 @media screen and (max-width: 1023px) {
 	.navbar-dropdown {

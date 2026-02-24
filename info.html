@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <title>Trappermapper</title>
+    <title>Trappermapper - Info</title>
     <link rel="icon" type="image/x-icon" href="img/hollyrosa-square.png">
     <meta charset="utf-8" />
 
@@ -52,6 +52,11 @@
         </div>
         <div class="navbar-menu" id="navMenu">
             <div class="navbar-start">
+
+            </div>
+
+            <div class="navbar-end">
+                <hr class="navbar-divider">
                 <a class="navbar-item" href="./info.html">
                     <i class="fas fa-info"></i>Info
                 </a>
@@ -59,46 +64,43 @@
                     <i class="fas fa-qrcode"></i>QR
                 </a>
             </div>
-
-            <div class="navbar-end">
-                <hr class="navbar-divider">
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a role="button" class="navbar-link">
-                        <i class="fas fa-layer-group"></i>Kartbakgrunder
-                    </a>
-                    <div class="navbar-dropdown is-right">
-                        <div class="navbar-item">
-                            <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
-                            <label for="osmRadio">OpenStreetMap</label><br>
-                            <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
-                            <label for="satRadio">Satellit</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a role="button" class="navbar-link">
-                        <i class="fas fa-filter"></i>Kartfilter
-                    </a>
-                    <div class="navbar-dropdown is-right">
-                        <div class="navbar-item" id="filter-box"></div>
-                    </div>
-                </div>
-            </div>
         </div>
         </div>
     </nav>
 
-    <div id="map"></div>
-
-    <div class="watermark">
-        Testversion!
+    <div class="section">
+        <div class="content">
+            <p class="title">
+                Info
+            </p>
+            <p>
+                Det här är en karta framtagen av funktionärerna på Vässarö. Använd
+                den inte som ett
+                navigationsverktyg på sjön.
+            </p>
+            <p>
+                Under filtret kan du välja vad du vill se på kartan.
+            </p>
+            <p>
+                Mer info om aktiviteterna, och om de som inte finns på kartan, finns
+                i vår <a href="https://vassaro.se/wp-content/uploads/Programlunta-Ver-23.1.0.pdf">Programlunta</a>.</a>
+            </p>
+            <p>
+                Du kan hjälpa till med kartans utveckling genom att prata med oss på
+                Lillgårn, mejla oss på
+                program(at)vassaro.se eller bidra på <a href="https://github.com/vassaro/trappermapper/"><i
+                        class="fa fa-brands fa-github"></i> Github</a>.
+            </p>
+            <p>
+                Den här hemsidan bor på
+                <a href="https://github.com/vassaro/trappermapper">
+                    Github <i class="fa-brands fa-github"></i>
+                </a>
+            </p>
+        </div>
     </div>
 
-    <script src="leaflet.js"></script>
     <script>
-        getSources(SOURCES);
-
         document.addEventListener('DOMContentLoaded', () => {
 
             // Get all "navbar-burger" elements
