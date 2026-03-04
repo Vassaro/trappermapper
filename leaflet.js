@@ -18,17 +18,16 @@ lfmap.on('drag', function () {
 
 // Lägg till lager och kontroller till kartan.
 const LAYER_CONTROL = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
-
-// Lägg till sidomeny till kartan.
-const SIDEBAR = L.control.sidebar('sidebar', {
-    position: 'left',
-}).addTo(lfmap);
-
+const LAYER_CONTROL_2 = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
 // Skapa skalan
-const SCALE = L.control.scale({
+// const SCALE = L.control.scale({
+//     position: "bottomright",
+//     metric: true,
+// }).addTo(lfmap)
+const SCALE = new L.Control.ScaleNautical({
     position: "bottomright",
-    metric: true,
-}).addTo(lfmap)
+    maxWidth: 100
+}).addTo(lfmap);
 
 // Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
 const LC = L.control
@@ -36,20 +35,17 @@ const LC = L.control
         strings: {
             title: "Visar din nuvarande position!"
         },
-        position: "topright",
+        position: "bottomleft",
     }).addTo(lfmap);
 
 // Flytta knappar till sidomenyn eller filtermenyn.
-const OBJECTS = []
-const BUTTON_BOX = document.getElementById('button-box')
-const FILTER_BOX = document.getElementById('filter-box')
+const FILTER_BOX = document.getElementById('filter-box-desktop');
+const FILTER_BOX_2 = document.getElementById('filter-box-mobile');
 function setParent(child, newParent) {
     newParent.appendChild(child.getContainer());
 };
-OBJECTS.forEach(element => {
-    setParent(element, BUTTON_BOX);
-});
 setParent(LAYER_CONTROL, FILTER_BOX);
+setParent(LAYER_CONTROL_2, FILTER_BOX_2);
 
 // Switch basemap
 if (document.querySelector('input[name="selectBackground"]')) {

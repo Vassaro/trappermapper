@@ -1212,7 +1212,7 @@
                     "properties": {
                         "title": "Fladan",
                         "desc": "Samlingsplats för sjöaktiviteter.",
-                        "icon": "",
+                        "icon": "defaultPin",
                         "group": [
                             "fladan"
                         ]
@@ -1221,6 +1221,24 @@
                         "coordinates": [
                             18.69766362835881,
                             60.26109278982332
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "title": "Bikupan",
+                        "desc": "Här finns Vässarös bikupa. Stick dit och titta :-)",
+                        "icon": "defaultPin",
+                        "group": [
+                            "apiary"
+                        ]
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            18.698001,
+                            60.254192
                         ],
                         "type": "Point"
                     }

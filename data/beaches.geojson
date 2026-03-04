@@ -7,7 +7,7 @@
         "title": "Bastun",
         "desc": "Boka bastun på Lillgårn",
         "group": "beaches",
-        "icon": ""
+        "icon": "defaultPin"
       },
       "geometry": {
         "coordinates": [
@@ -24,7 +24,7 @@
         "title": "Grisbukten",
         "desc": "Långgrund, stenig vik. Följ stigen från dasset längst söder ut på östra ängen.",
         "group": "beaches",
-        "icon": ""
+        "icon": "defaultPin"
       },
       "geometry": {
         "coordinates": [
@@ -41,7 +41,7 @@
         "title": "Fladan",
         "desc": "Bortanför Fladan kan man bada i en vik.",
         "group": "beaches",
-        "icon": ""
+        "icon": "defaultPin"
       },
       "geometry": {
         "coordinates": [
@@ -58,7 +58,7 @@
         "title": "Hoppklipporna",
         "desc": "Följ det orangea spåret från Fladanvägen!",
         "group": "beaches",
-        "icon": ""
+        "icon": "defaultPin"
       },
       "geometry": {
         "coordinates": [
@@ -75,7 +75,7 @@
         "title": "Fladan",
         "desc": "På andra sidan Fladan går det också bra",
         "group": "beaches",
-        "icon": ""
+        "icon": "defaultPin"
       },
       "geometry": {
         "coordinates": [
@@ -92,7 +92,7 @@
         "title": "Södra stranden",
         "desc": "Långgrund sandstrand",
         "group": "beaches",
-        "icon": ""
+        "icon": "defaultPin"
       },
       "geometry": {
         "coordinates": [
@@ -109,7 +109,7 @@
         "title": "Betongbryggan",
         "desc": "Brygga av betong",
         "group": "beaches",
-        "icon": ""
+        "icon": "defaultPin"
       },
       "geometry": {
         "coordinates": [

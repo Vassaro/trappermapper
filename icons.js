@@ -96,6 +96,12 @@ const ICONS = {
         iconSize: [60, 60],
         iconAnchor: [30, 60],
         popupAnchor: [0, -60]
+    }),
+    defaultPin: new L.icon({
+        iconUrl: baseUrl + '/icons/pinWhite.png',
+        iconSize: [60, 60],
+        iconAnchor: [30, 60],
+        popupAnchor: [0, -60]
     })
 };
 

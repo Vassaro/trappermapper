@@ -47,6 +47,7 @@ const GROUPS = {
     shortcuts: new L.LayerGroup(),
     boomerang: new L.LayerGroup(),
     fladan: new L.LayerGroup(),
+    apiary: new L.LayerGroup(),
     beaches: new L.LayerGroup()
 };
 
@@ -121,6 +122,16 @@ const OVERLAYS_TREE = {
                 { label: "Vässarö runt", layer: GROUPS.vassarorunt },
             ]
         },
+        {
+            label: "Vatten",
+            selectAllCheckbox: true,
+            collapsed: true,
+            children: [
+                { label: "Fladan", layer: GROUPS.fladan },
+                { label: "Naturhamnar", layer: GROUPS.moorings },
+                { label: "Badplatser", layer: GROUPS.beaches },
+            ]
+        },
         // {
         //     label: "Orienteringskartor",
         //     selectAllCheckbox: true,
@@ -137,9 +148,7 @@ const OVERLAYS_TREE = {
             selectAllCheckbox: true,
             collapsed: false,
             children: [
-                { label: "Fladan", layer: GROUPS.fladan },
-                { label: "Naturhamnar", layer: GROUPS.moorings },
-                { label: "Badplatser", layer: GROUPS.beaches },
+                { label: "Bikupan", layer: GROUPS.apiary },
                 { label: "Laddlådor", layer: GROUPS.chargebox },
                 { label: "Dass", layer: GROUPS.toilets },
                 { label: "Soprum", layer: GROUPS.trashrooms },

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <title>Trappermapper</title>
+    <link rel="icon" type="image/x-icon" href="../img/hollyrosa-square.png">
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="../src/L.Control.Locate.min.css" />
+    <script src="../src/L.Control.Locate.min.js" charset="utf-8"></script>
+
+    <script src="../src/L.Control.Layers.Tree.js"></script>
+    <link rel="stylesheet" href="../src/L.Control.Layers.Tree.css" />
+
+    <script src="../src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <script src="../src/L.Control.Layers.Tree.js"></script>
+
+    <script src="../src/leaflet.nauticalscale.js"></script>
+
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../icons.js"></script>
+    <script src="../maplayers.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--stulet från https://leafletjs.com/examples/mobile/example.html-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body class="has-navbar-fixed-top">
+
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="navbar-top">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../">
+                <img src="../img/logotyp-ls.png">&nbsp;Trappermapper
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu"
+                style="display: none;">
+                <img src="../icons/filter.svg">
+            </a>
+
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-start" style="display: none;"></div>
+
+            <div class="navbar-end" style="display: none;">
+                <a class="navbar-item is-hidden-touch" href="/info.html">
+                    <i class="fas fa-info"></i>Info
+                </a>
+                <a class="navbar-item is-hidden-touch" href="/qr.html">
+                    <i class="fas fa-qrcode"></i>QR
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item has-dropdown is-active is-hidden-touch">
+                    <div class="navbar-dropdown is-right" style="overflow-y:scroll; max-height: calc(100vh - 100px);">
+                        <div class="navbar-item"><img src="/img/hollyrosa.svg">Kartbakgrunder</div>
+                        <div class="navbar-item">
+                            <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
+                            <label for="osmRadio">OpenStreetMap</label><br>
+                            <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
+                            <label for="satRadio">Satellit</label>
+                        </div>
+                        <hr class="navbar-divider">
+                        <div class="navbar-item"><img src="/icons/filter.svg">Kartfilter</div>
+                        <div class="navbar-item" id="filter-box-desktop">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="is-hidden-desktop">
+                    <a class="navbar-item" href="/info.html">
+                        <i class="fas fa-info"></i>Info
+                    </a>
+                    <a class="navbar-item" href="/qr.html">
+                        <i class="fas fa-qrcode"></i>QR
+                    </a>
+                    <div class="navbar-item">
+                        <strong>Kartbakgrunder</strong>
+                    </div>
+                    <div class="navbar-item">
+                        <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
+                        <label for="osmRadio">OpenStreetMap</label><br>
+                        <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
+                        <label for="satRadio">Satellit</label>
+                    </div>
+                    <div class="navbar-item">
+                        <strong>Kartfilter</strong>
+                    </div>
+                    <div class="navbar-item" id="filter-box-mobile"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div id="map"></div>
+
+    <div class="watermark">
+        Testversion!
+    </div>
+
+    <script src="../leaflet.js"></script>
+    <script>
+        getSources(SOURCES);
+        lfmap.addLayer(GROUPS.ls);
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+
+                });
+            });
+
+            // Dropdown toggle for mobile
+            document.querySelectorAll('.navbar-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+
+                    const parent = this.parentElement;
+
+                    if (window.innerWidth <= 1023) {
+                        e.preventDefault();
+                        parent.classList.toggle('is-active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
