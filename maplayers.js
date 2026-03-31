@@ -125,7 +125,7 @@ const OVERLAYS_TREE = {
         {
             label: "Vatten",
             selectAllCheckbox: true,
-            collapsed: true,
+            collapsed: false,
             children: [
                 { label: "Fladan", layer: GROUPS.fladan },
                 { label: "Naturhamnar", layer: GROUPS.moorings },

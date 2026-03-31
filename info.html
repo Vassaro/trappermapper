@@ -37,68 +37,87 @@
 <body class="has-navbar-fixed-top">
 
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="navbar-top">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="./">
-                <img src="img/hollyrosa.svg">&nbsp;Trappermapper
-            </a>
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./">
+                    <img src="img/hollyrosa.svg">&nbsp;Trappermapper
+                </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-
-        </div>
-        <div class="navbar-menu" id="navMenu">
-            <div class="navbar-start">
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
 
             </div>
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-start">
 
-            <div class="navbar-end">
-                <hr class="navbar-divider">
-                <a class="navbar-item" href="./info.html">
-                    <i class="fas fa-info"></i>Info
-                </a>
-                <a class="navbar-item" href="./qr.html">
-                    <i class="fas fa-qrcode"></i>QR
-                </a>
+                </div>
+
+                <div class="navbar-end">
+                    <hr class="navbar-divider">
+                    <a class="navbar-item" href="./info.html">
+                        <i class="fas fa-info"></i>Info
+                    </a>
+                    <a class="navbar-item" href="./qr.html">
+                        <i class="fas fa-qrcode"></i>QR
+                    </a>
+                </div>
             </div>
-        </div>
         </div>
     </nav>
 
-    <div class="section">
-        <div class="content">
-            <p class="title">
-                Info
-            </p>
-            <p>
-                Det här är en karta framtagen av funktionärerna på Vässarö. Använd
-                den inte som ett
-                navigationsverktyg på sjön.
-            </p>
-            <p>
-                Under filtret kan du välja vad du vill se på kartan.
-            </p>
-            <p>
-                Mer info om aktiviteterna, och om de som inte finns på kartan, finns
-                i vår <a href="doc/Programlunta-Ver-25.1.2.pdf">Programlunta</a>.</a>
-            </p>
-            <p>
-                Du kan hjälpa till med kartans utveckling genom att prata med oss på
-                Lillgårn, mejla oss på
-                program(at)vassaro.se eller bidra på <a href="https://github.com/vassaro/trappermapper/"><i
-                        class="fa fa-brands fa-github"></i> Github</a>.
-            </p>
+    <div class="container">
+        <div class="section">
+            <div class="content">
+                <p class="title">
+                    Info
+                </p>
+                <p>
+                    Det här är en karta framtagen av funktionärerna på Vässarö. Använd
+                    den inte som ett navigationsverktyg på sjön. Under filtret kan du välja vad du vill se på kartan.
+                </p>
+                <p>
+                    Mer info om aktiviteterna, och om de som inte finns på kartan, finns
+                    i vår <strong><a href="doc/Programlunta-Ver-25.1.2.pdf">Programlunta</a></strong>.
+                </p>
+                <p>
+                    Du kan hjälpa till med kartans utveckling genom att prata med oss på
+                    Lillgårn, mejla oss på
+                    program(at)vassaro.se, eller bidra på <a href="https://github.com/vassaro/trappermapper/"><i
+                            class="fa fa-brands fa-github"></i> Github</a>.
+                </p>
+                <p class="has-text-centered">
+                    <a href="https://scouterna.se">
+                        <img src="https://cdn.scouterna.net/logos/Scoutsymbolen_rgb.png" width="100px"
+                            alt="Scouternas logga">
+                    </a>
+                    &nbsp;
+                    <a href="https://vassaro.se">
+                        <img src="/img/vassaro_logga.jpg" width="75px" alt="Vässarös logga">
+                    </a>
+                    &nbsp;
+                    <img src="/img/hollyrosa.svg" width="50px" alt="Hollyrosa, programpatrullens logga">
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
             <p>
                 Den här hemsidan bor på
                 <a href="https://github.com/vassaro/trappermapper">
-                    Github <i class="fa-brands fa-github"></i>
+                    <strong>Github <i class="fa-brands fa-github"></i></strong>.
                 </a>
             </p>
+            <p>
+                &copy; Github contributors.
+            </p>
         </div>
-    </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {

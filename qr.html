@@ -35,56 +35,72 @@
 </head>
 
 <body class="has-navbar-fixed-top">
-
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" id="navbar-top">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="./">
-                <img src="img/hollyrosa.svg">&nbsp;Trappermapper
-            </a>
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./">
+                    <img src="img/hollyrosa.svg">&nbsp;Trappermapper
+                </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-
-        </div>
-        <div class="navbar-menu" id="navMenu">
-            <div class="navbar-start">
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
 
             </div>
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-start">
 
-            <div class="navbar-end">
-                <hr class="navbar-divider">
-                <a class="navbar-item" href="./info.html">
-                    <i class="fas fa-info"></i>Info
-                </a>
-                <a class="navbar-item" href="./qr.html">
-                    <i class="fas fa-qrcode"></i>QR
-                </a>
+                </div>
+
+                <div class="navbar-end">
+                    <hr class="navbar-divider">
+                    <a class="navbar-item" href="./info.html">
+                        <i class="fas fa-info"></i>Info
+                    </a>
+                    <a class="navbar-item" href="./qr.html">
+                        <i class="fas fa-qrcode"></i>QR
+                    </a>
+                </div>
             </div>
-        </div>
         </div>
     </nav>
 
-    <div class="section">
-        <div class="content">
-            <p class="title">
-                QR
-            </p>
-            <p>
-                Du hittar enklast tillbaka till den här kartan genom att spara
-                länken eller skanna QR-koden med
-                din mobilkamera:
-            </p>
-            <p>
-                <img src="img/qr/qr.trappermapper.png" alt="QR-kod som leder till den här kartan" width="128px"
-                    height="128px" />
-                </a>
-            </p>
+    <div class="container">
+        <div class="section">
+            <div class="content">
+                <p class="title">
+                    QR
+                </p>
+                <p>
+                    Du hittar enklast tillbaka till den här kartan genom att spara
+                    länken eller skanna QR-koden med
+                    din mobilkamera:
+                </p>
+                <p>
+                    <img src="img/qr/qr.trappermapper.png" alt="QR-kod som leder till den här kartan" width="128px"
+                        height="128px" />
+                    </a>
+                </p>
+            </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Den här hemsidan bor på
+                <a href="https://github.com/vassaro/trappermapper">
+                    <strong>Github <i class="fa-brands fa-github"></i></strong>.
+                </a>
+            </p>
+            <p>
+                &copy; Github contributors.
+            </p>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
