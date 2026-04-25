@@ -95,7 +95,7 @@ const OVERLAYS_TREE = {
                         { label: "Ovan molnen", layer: GROUPS.startrail },
                         { label: "Knopspåret", layer: GROUPS.knottrail },
                         { label: "Träck track", layer: GROUPS.pooptrail },
-                        { label: "Woodcraftspåret", layer: GROUPS.woodcrafttrail },
+                        // { label: "Woodcraftspåret", layer: GROUPS.woodcrafttrail },
                     ]
                 },
                 {
