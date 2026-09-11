@@ -1,0 +1,23 @@
+{
+  "site": {
+    "title": "Trappermapper",
+    "description": "Karta över Vässarös programaktiviteter",
+    "language": "Språk"
+  },
+  "navigation": {
+    "home": "Hem",
+    "about": "Om",
+    "contact": "Kontakt",
+    "qr": "QR",
+    "index": "Index"
+  },
+  "map": {
+    "title": "Platser",
+    "selectPlace": "Välj en plats",
+    "coordinates": "Koordinater"
+  },
+  "buttons": {
+    "close": "Stäng",
+    "search": "Sök"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Laddlåda",
+        "desc": "Lillgårns norra gavel",
+        "group": "chargebox",
+        "icon": "chargeboxPin"
+      },
+      "geometry": {
+        "coordinates": [
+          18.693657183696615,
+          60.255480384559945
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Laddlåda",
+        "desc": "10-dasset",
+        "group": "chargebox",
+        "icon": "chargeboxPin"
+      },
+      "geometry": {
+        "coordinates": [
+          18.6992949954693,
+          60.254048348913756
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Laddlåda",
+        "desc": "Mitt på mellanängarna",
+        "group": "chargebox",
+        "icon": "chargeboxPin"
+      },
+      "geometry": {
+        "coordinates": [
+          18.696003533552783,
+          60.25861497843567
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Laddlåda",
+        "desc": "Mellanängarnas 10-dass",
+        "group": "chargebox",
+        "icon": "chargeboxPin"
+      },
+      "geometry": {
+        "coordinates": [
+          18.69310726512333,
+          60.25865238347774
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Laddlåda",
+        "desc": "TC-dasset",
+        "group": "chargebox",
+        "icon": "chargeboxPin"
+      },
+      "geometry": {
+        "coordinates": [
+          18.6909012650722,
+          60.25403353529907
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+// Skapar kartan med restriktioner på zoom
+var lfmap = L.map('map', {
+    center: [60.25542, 18.69360],
+    zoom: 14,
+    minZoom: 12,
+    zoomControl: false,
+    layers: [MapLayers.Basemaps.OpenStreetMap],
+});
+
+// Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
+const SOUTH_WEST = L.latLng(60.0, 18.0);
+const NORTH_EAST = L.latLng(60.4, 19.0);
+const BOUNDS = L.latLngBounds(SOUTH_WEST, NORTH_EAST);
+lfmap.setMaxBounds(BOUNDS);
+lfmap.on('drag', function () {
+    lfmap.panInsideBounds(BOUNDS, { animate: true });
+});
+
+// Lägg till lager och kontroller till kartan.
+const LAYER_CONTROL = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
+// const LAYER_CONTROL_2 = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
+// Skapa skalan
+// const SCALE = L.control.scale({
+//     position: "bottomright",
+//     metric: true,
+// }).addTo(lfmap)
+const SCALE = new L.Control.ScaleNautical({
+    position: "bottomright",
+    maxWidth: 100
+}).addTo(lfmap);
+
+// Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
+const LC = L.control
+    .locate({
+        strings: {
+            title: "Visar din nuvarande position!"
+        },
+        position: "bottomleft",
+    }).addTo(lfmap);
+
+// Flytta knappar till sidomenyn eller filtermenyn.
+const FILTER_BOX = document.getElementById('filter-box');
+// const FILTER_BOX = document.getElementById('filter-box-desktop');
+// const FILTER_BOX_2 = document.getElementById('filter-box-mobile');
+function setParent(child, newParent) {
+    newParent.appendChild(child.getContainer());
+};
+setParent(LAYER_CONTROL, FILTER_BOX);
+// setParent(LAYER_CONTROL_2, FILTER_BOX_2);
+
+// Switch basemap
+if (document.querySelector('input[name="selectBackground"]')) {
+    document.querySelectorAll('input[name="selectBackground"]').forEach((elem) => {
+        elem.addEventListener("change", function (event) {
+            const ITEM = event.target.value;
+            for (let key in MapLayers.Basemaps) {
+                MapLayers.Basemaps[key].remove();
+            };
+            MapLayers.Basemaps[ITEM].addTo(lfmap);
+        });
+    });
+}
+
+export default lfmap;

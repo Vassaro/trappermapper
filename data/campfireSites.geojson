@@ -1,0 +1,374 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.68454, 60.25227]
+        },
+        "properties": {
+          "title": "Rötis",
+          "desc": "Mytologisk plats.",
+          "group": "campfireother",
+          "icon": "campfireotherIcon",
+          "skip": true
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.70201, 60.25213]
+        },
+        "properties": {
+          "title": "Östra östra",
+          "desc": "Stor stockring på en kulle i skogen. Eldstad och vedskjul. Stig från mitt på Östra ängarna.",
+          "group": "campfirering",
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69656, 60.25301]
+        },
+        "properties": {
+          "title": "Woodcraft",
+          "desc": "Sliten stockring med eldstad på woodcraftspåret. Följ spår från konfdasset eller mitt på östra ängarna.",
+          "group": "campfirering",
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.70281, 60.25035]
+        },
+        "properties": {
+          "title": "Överängens vindskydd",
+          "desc": "Uppe på kullen mot vattnet.",
+          "group": "windshelterfire",
+          "icon": "windshelterfirePin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.70228, 60.24939]
+        },
+        "properties": {
+          "title": "Naturnäran",
+          "desc": "Stor stockring på naturnärans stig.",
+          "group": "campfirering",
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69683, 60.24838]
+        },
+        "properties": {
+          "title": "Södra stranden",
+          "desc": "Stockring med eldstad och vedskjul vi vattnet. Följ orange stig från Överängen, eller skogsvägen norrifrån.",
+          "group": "campfirering",
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.70564, 60.25521]
+        },
+        "properties": {
+          "title": "Gamla Stora",
+          "desc": "Stor klipphäll med eldstad. Följ stigen genom Samarbetsgläntan.",
+          "group": "campfirerock",
+          "icon": "campfirerockPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.70218, 60.25678]
+        },
+        "properties": {
+          "title": "Trappervindskyddet",
+          "desc": "Vindskydd på trapperspåret. Eldförbud! (förutom stormkök, etc.)",
+          "group": "windshelter",
+          "icon": "windshelterPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.68827, 60.25828]
+        },
+        "properties": {
+          "title": "Båthusringen",
+          "desc": "Stockring utomhus, Ivar-grillar, i anslutning till Båthuset",
+          "group": ["campfirering","ls"],
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.68807, 60.25833]
+        },
+        "properties": {
+          "title": "Båthuset",
+          "desc": "Mysig samlingslokal med bar, bord, bänkar, TV, högtalaranläggning, samt kamin i huset. Lägerbålsring och spisar precis utomhus.",
+          "group": ["firehouse","ls"],
+          "icon": "firehousePin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69039, 60.25449]
+        },
+        "properties": {
+          "title": "Grillkåtan",
+          "desc": "'Lusthus' med stockring och stor eldstad med galler.",
+          "group": ["firehouse","ls"],
+          "icon": "firehousePin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.68400, 60.25469]
+        },
+        "properties": {
+          "title": "Rötis/Betongbryggan",
+          "desc": "Sliten ring (ej komplett). Glänta med eldstad.",
+          "group": "campfireother",
+          "icon": "campfireotherIcon",
+          "skip": true
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.70502, 60.25888]
+        },
+        "properties": {
+          "title": "Slåttskär",
+          "desc": "Vindskydd på trapperspåret.",
+          "group": "windshelterfire",
+          "icon": "windshelterfirePin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.68539, 60.25743]
+        },
+        "properties": {
+          "title": "Bastuklipporna",
+          "desc": "Klipphäll med eldstad. Perfekt för 50pers. Följ stigen förbi bastun.",
+          "group": "campfirerock",
+          "icon": "campfirerockPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.68575, 60.25803]
+        },
+        "properties": {
+          "title": "Bastustranden",
+          "desc": "Nere vid vattnet precis bakom lilla bastun och vattenupptaget finns en mysig lägerbålsplats för en patrull.",
+          "group": "campfirerock",
+          "icon": "campfirerockPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69403, 60.25985]
+        },
+        "properties": {
+          "title": "Fårhagen",
+          "desc": "Stockring med eldstad och vedskjul. Följ orange stig från Tyskängen eller 10-dasset. Eller gå över stättan på Mellanängarna.",
+          "group": "campfirering",
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69660, 60.26000]
+        },
+        "properties": {
+          "title": "Fladanvägen",
+          "desc": "Stockring med eldstad och vedskjul. Precis bredvid vägen mellan Tyskängen och Klippängen.",
+          "group": "campfirering",
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69809, 60.26042]
+        },
+        "properties": {
+          "title": "Fladanklipporna",
+          "desc": "Klipphäll med eldstad och vedskjul. Passar ungefär 100 pers.",
+          "group": "campfirerock",
+          "icon": "campfirerockPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69915, 60.25903]
+        },
+        "properties": {
+          "title": "Trappergläntan",
+          "desc": "Stockring med eldstad och vedskjul precis bortom trapperstarten.",
+          "group": "campfirering",
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69168, 60.26287]
+        },
+        "properties": {
+          "title": "Norra ängen",
+          "desc": "Eldstad på klippan mot vattnet. Saknar stockar just nu.",
+          "group": "campfirerock",
+          "icon": "campfirerockPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69084, 60.26381]
+        },
+        "properties": {
+          "title": "Norra Ängen",
+          "desc": "Stockring under uppbyggnad. Saknar stockar just nu.",
+          "group": "campfireother",
+          "icon": "campfireotherIcon",
+          "skip": true
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69885, 60.26332]
+        },
+        "properties": {
+          "title": "Norra vindskyddet",
+          "desc": "Vindskydd med eldstad.",
+          "group": "windshelterfire",
+          "icon": "windshelterfirePin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69840, 60.26704]
+        },
+        "properties": {
+          "title": "Ljusklubben",
+          "desc": "Klipphäll vid vattnet mot norr.",
+          "group": ["campfirerock","ls"],
+          "icon": "campfirerockPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69723, 60.26672]
+        },
+        "properties": {
+          "title": "Ljusklubbens vindskydd",
+          "desc": "",
+          "group": "windshelter",
+          "icon": "windshelterPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.71650, 60.27081]
+        },
+        "properties": {
+          "title": "Garpens vindskydd",
+          "desc": "",
+          "group": "windshelter",
+          "icon": "windshelterPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69316, 60.25716]
+        },
+        "properties": {
+          "title": "Eldorado",
+          "desc": "Stor klipphäll med plats för 2000pers. Eldstad och stockring. Vatten.",
+          "group": "campfirerock",
+          "icon": "campfirerockPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.69287, 60.25548]
+        },
+        "properties": {
+          "title": "Lillgårn",
+          "desc": "Byledarringen bakom lillgårn. Stockring och eldstad.",
+          "group": ["campfirering","ls"],
+          "icon": "campfireringPin"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.72199796540062, 60.26980508887958]
+        },
+        "properties": {
+          "title": "Garpens lägerbålsplats",
+          "desc": "",
+          "group": "campfirering",
+          "icon": "campfireringPin",
+          "skip": true
+        }
+      }
+    ]
+  }
+  

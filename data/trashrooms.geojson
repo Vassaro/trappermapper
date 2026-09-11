@@ -1,0 +1,138 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Sopis",
+		  "desc": "Soprummet vid matsalen",
+		  "group": "trashrooms",
+		  "icon": "trashroomPin"
+		},
+		"geometry": {
+		  "coordinates": [
+			18.692736914214606,
+			60.253532436454236
+		  ],
+		  "type": "Point"
+		},
+		"id": 0
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Skrakviks soprum",
+		  "desc": "Soprummet vid skrakviksängen, ett litet rött hus med en dörr",
+		  "group": "trashrooms",
+		  "icon": "trashroomPin"
+		},
+		"geometry": {
+		  "coordinates": [
+			18.691644553680902,
+			60.25548738191199
+		  ],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Tunets soprum",
+		  "desc": "Vänstra dörren",
+		  "group": "trashrooms",
+		  "icon": "trashroomPin"
+		},
+		"geometry": {
+		  "coordinates": [
+			18.693712792048302,
+			60.25581151047501
+		  ],
+		  "type": "Point"
+		}
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Konfbyns soprum",
+		  "desc": "Ligger i samma byggnad som dassen, på norra sidan",
+		  "group": "trashrooms",
+		  "icon": "trashroomPin"
+		},
+		"geometry": {
+		  "coordinates": [
+			18.694243971097762,
+			60.25386043190957
+		  ],
+		  "type": "Point"
+		},
+		"id": 3
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Östra soprummet",
+		  "desc": "Ligger på kortändan av östra tiodassen",
+		  "group": "trashrooms",
+		  "icon": "trashroomPin"
+		},
+		"geometry": {
+		  "coordinates": [
+			18.699288915960125,
+			60.25404584661837
+		  ],
+		  "type": "Point"
+		},
+		"id": 4
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Programsoprummet",
+		  "desc": "Ligger på östra kortändan av programdassen",
+		  "group": "trashrooms",
+		  "icon": "trashroomPin"
+		},
+		"geometry": {
+		  "coordinates": [
+			18.697842880462332,
+			60.25832764560664
+		  ],
+		  "type": "Point"
+		},
+		"id": 5
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Mellanängarnas soprum",
+		  "desc": "Ligger på kortändan av djuphamns tiodass",
+		  "group": "trashrooms",
+		  "icon": "trashroomPin"
+		},
+		"geometry": {
+		  "coordinates": [
+			18.693076799019224,
+			60.25863457361723
+		  ],
+		  "type": "Point"
+		},
+		"id": 6
+	  },
+	  {
+		"type": "Feature",
+		"properties": {
+		  "title": "Häverödals återvinningscentral",
+		  "desc": "",
+		  "group": "trashrooms",
+		  "icon": "trashroomPin"
+		},
+		"geometry": {
+		  "coordinates": [
+			18.645311358222244,
+			60.03724020422251
+		  ],
+		  "type": "Point"
+		}
+	  }
+	]
+  }

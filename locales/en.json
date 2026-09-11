@@ -1,0 +1,23 @@
+{
+  "site": {
+    "title": "Trappermapper",
+    "description": "Vässarö Program activities map.",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "qr": "QR",
+    "index": "Index"
+  },
+  "map": {
+    "title": "Places",
+    "selectPlace": "Select a place",
+    "coordinates": "Coordinates"
+  },
+  "buttons": {
+    "close": "Close",
+    "search": "Search"
+  }
+}
