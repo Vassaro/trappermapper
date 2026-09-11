@@ -1,29 +1,31 @@
+//Definera länkar till basemaps (grundkartor) OpenStreetMap & satellit
+const basemaps = {
+    OpenStreetMap: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</a>.'
+    }),
+    Satellit: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: '&copy; <a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri, Maxar, Earthstar Geographics, and the GIS User Community</a>.'
+    })
+};
+
 // Skapar kartan med restriktioner på zoom
-var lfmap = L.map('map', {
+const lfmap = L.map('map', {
     center: [60.25542, 18.69360],
     zoom: 14,
     minZoom: 12,
     zoomControl: false,
-    layers: [MapLayers.Basemaps.OpenStreetMap],
+    layers: [basemaps.OpenStreetMap],
 });
 
 // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
-const SOUTH_WEST = L.latLng(60.0, 18.0);
-const NORTH_EAST = L.latLng(60.4, 19.0);
-const BOUNDS = L.latLngBounds(SOUTH_WEST, NORTH_EAST);
-lfmap.setMaxBounds(BOUNDS);
+const sw = L.latLng(60.0, 18.0);
+const ne = L.latLng(60.4, 19.0);
+const bounds = L.latLngBounds(sw, ne);
+lfmap.setMaxBounds(bounds);
 lfmap.on('drag', function () {
-    lfmap.panInsideBounds(BOUNDS, { animate: true });
+    lfmap.panInsideBounds(bounds, { animate: true });
 });
 
-// Lägg till lager och kontroller till kartan.
-const LAYER_CONTROL = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
-// const LAYER_CONTROL_2 = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
-// Skapa skalan
-// const SCALE = L.control.scale({
-//     position: "bottomright",
-//     metric: true,
-// }).addTo(lfmap)
 const SCALE = new L.Control.ScaleNautical({
     position: "bottomright",
     maxWidth: 100
@@ -38,25 +40,15 @@ const LC = L.control
         position: "bottomleft",
     }).addTo(lfmap);
 
-// Flytta knappar till sidomenyn eller filtermenyn.
-const FILTER_BOX = document.getElementById('filter-box');
-// const FILTER_BOX = document.getElementById('filter-box-desktop');
-// const FILTER_BOX_2 = document.getElementById('filter-box-mobile');
-function setParent(child, newParent) {
-    newParent.appendChild(child.getContainer());
-};
-setParent(LAYER_CONTROL, FILTER_BOX);
-// setParent(LAYER_CONTROL_2, FILTER_BOX_2);
-
 // Switch basemap
 if (document.querySelector('input[name="selectBackground"]')) {
     document.querySelectorAll('input[name="selectBackground"]').forEach((elem) => {
         elem.addEventListener("change", function (event) {
             const ITEM = event.target.value;
-            for (let key in MapLayers.Basemaps) {
-                MapLayers.Basemaps[key].remove();
+            for (let key in basemaps) {
+                basemaps[key].remove();
             };
-            MapLayers.Basemaps[ITEM].addTo(lfmap);
+            basemaps[ITEM].addTo(lfmap);
         });
     });
 }

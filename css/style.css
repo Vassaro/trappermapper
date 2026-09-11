@@ -14,44 +14,8 @@ body,
 	height: calc(100% - 60px);
 }
 
-
-.leaflet-control-layers {
-	border: none !important;
-	background: none !important;
-	box-shadow: none;
-}
-
 .leaflet-touch .leaflet-bar a {
 	width: 40px;
 	height: 40px;
 	line-height: 40px;
-}
-
-.leaflet-touch .leaflet-control-zoom-in,
-.leaflet-touch .leaflet-control-zoom-out {
-	font-size: 40px;
-	margin: 0px;
-	border: none !important;
-	color: #000000;
-}
-
-.leaflet-layerstree-header-name {
-	font-size: 12pt;
-	font-weight: normal;
-	margin-left: 5px;
-	margin-right: 0px;
-}
-
-.leaflet-layerstree-header {
-	width: auto;
-	display: block;
-}
-
-.leaflet-layerstree-children {
-	padding-left: 30px;
-}
-
-.leaflet-container {
-	font-size: 8pt !important;
-	font-family: var(--std-font) !important;
 }

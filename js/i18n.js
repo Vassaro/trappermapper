@@ -115,7 +115,14 @@ function updateLanguageButtons() {
         });
 }
 
-let geojson = null;
+function escapeHtml(value) {
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
 
 
 async function init() {
@@ -124,17 +131,7 @@ async function init() {
     updatePage();
     updateLanguageButtons();
     console.log(i18n.language)
-    getSources(SOURCES, i18n.language)
 
-}
-
-function escapeHtml(value) {
-    return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
 }
 
 init().catch(error => {
