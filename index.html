@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trappermapper</title>
-    <link rel="icon" type="image/x-icon" href="/assets/img/hollyrosa-square.png">
+    <link rel="icon" type="image/x-icon" href="assets/img/hollyrosa-square.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -19,44 +19,106 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <link rel="stylesheet" href="/src/L.Control.Locate.min.css" />
-    <script src="/src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
+    <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
 
-    <script src="/src/leaflet.nauticalscale.js"></script>
+    <script src="src/leaflet.nauticalscale.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
+
+<style>
+    a.dropdown-item {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+</style>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="/assets/img/hollyrosa.svg" height="32">&nbsp;
+
+            <a class="navbar-brand" href="./">
+                <img src="assets/img/hollyrosa.svg" height="32">&nbsp;
                 <span data-i18n="site.title"></span>
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav order-2">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">
+                            <img src="assets/icons/filter.svg" height="32px">&nbsp;
+                            <span data-i18n="mapcontrols.controltitle"></span>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end" style="min-width: 250px; max-width: 100vw;">
+                            <li>
+                                <h6 class="dropdown-header" data-i18n="mapcontrols.basemaps"></h6>
+                            </li>
+                            <li>
+                                <a class="dropdown-item">
+                                    <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap"
+                                        checked>
+                                    <label for="osmRadio" data-i18n="mapcontrols.osm"></label><br>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item">
+                                    <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
+                                    <label for="satRadio" data-i18n="mapcontrols.sat"></label>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <h6 class="dropdown-header" data-i18n="mapcontrols.layers"></h6>
+                            </li>
+                            <li>
+                                <div class="dropdown-item">
+                                    <div id="filter-box"></div>
+                                    <div>TODO...</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 order-1">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./" data-i18n="navigation.home"></a>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/" data-i18n="navigation.home"></a>
+                        <a class="nav-link" href="#">
+                            <span class="iconify" data-icon="mdi-information-variant-circle-outline"></span>&nbsp;
+                            <span data-i18n="navigation.about"></span>                            
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-i18n="navigation.about"></a>
+                        <a class="nav-link" href="#">
+                            <span class="iconify" data-icon="mdi-qrcode"></span>&nbsp;
+                            <span data-i18n="navigation.qr"></span>                            
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-i18n="navigation.qr"></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-i18n="navigation.index"></a>
+                        <a class="nav-link" href="#">
+                            <span class="iconify" data-icon="mdi-library-outline"></span>&nbsp;
+                            <span data-i18n="navigation.index"></span>                            
+                        </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
+                            <span class="iconify" data-icon="mdi-globe"></span>&nbsp;
                             <span data-i18n="site.language"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -81,43 +143,6 @@
                     <input class="form-control me-2" type="search" data-i18n="[placeholder]buttons.search">
                     <button class="btn btn-outline-success" type="submit" data-i18n="buttons.search"></button>
                 </form> -->
-                <!-- <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="/assets/icons/filter.svg" height="32px">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end" style="min-width: 250px;">
-                        <div class="dropdown-item" id="filter-box"></div>
-                    </div>
-                </div> -->
-                <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        data-bs-auto-close="outside" aria-expanded="false">
-                        <img src="/assets/icons/filter.svg" height="32px">
-                    </a>
-
-                    <ul class="dropdown-menu dropdown-menu-end" style="min-width: 250px; max-width: 100vw;">
-                        <li>
-                            <a class="dropdown-item">
-                                <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
-                                <label for="osmRadio">OpenStreetMap</label><br>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item">
-                                <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
-                                <label for="satRadio">Satellit</label>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li>
-                            <div class="dropdown-item" id="filter-box"></div>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </nav>
@@ -128,7 +153,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
 
 </body>
 

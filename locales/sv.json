@@ -9,15 +9,13 @@
     "about": "Om",
     "contact": "Kontakt",
     "qr": "QR",
-    "index": "Index"
+    "index": "Programlunta"
   },
-  "map": {
-    "title": "Platser",
-    "selectPlace": "Välj en plats",
-    "coordinates": "Koordinater"
-  },
-  "buttons": {
-    "close": "Stäng",
-    "search": "Sök"
+  "mapcontrols": {
+    "controltitle": "Filter",
+    "basemaps": "Kartbakgrunder",
+    "layers": "Kartfilter",
+    "sat": "Satellit",
+    "osm": "OpenStreetMap"
   }
 }

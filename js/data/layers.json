@@ -2,14 +2,14 @@
     "layers": [
         {
             "id": "campfiresites",
-            "source": "campfireSites.json",
             "title": {
                 "sv": "Lägerbålsplatser",
-                "en": "Camp fire sites"
+                "en": "Campfire sites"
             },
             "children": [
                 {
                     "id": "logrings",
+                    "source": "campfiresites.logrings.geojson",
                     "title": {
                         "sv": "Stockringar",
                         "en": "Log rings"
@@ -18,6 +18,7 @@
                 },
                 {
                     "id": "cliffs",
+                    "source": "campfiresites.cliffs.geojson",
                     "title": {
                         "sv": "Klipphällar",
                         "en": "Cliffs"
@@ -26,6 +27,7 @@
                 },
                 {
                     "id": "ceilings",
+                    "source": "campfiresites.ceilings.geojson",
                     "title": {
                         "sv": "Eldstad med tak",
                         "en": "Fire places with ceiling"

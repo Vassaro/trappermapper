@@ -6,6 +6,7 @@ const basemaps = {
     Satellit: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         attribution: '&copy; <a href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri, Maxar, Earthstar Geographics, and the GIS User Community</a>.'
     })
+    // Feel free to add more
 };
 
 // Skapar kartan med restriktioner på zoom
@@ -26,7 +27,7 @@ lfmap.on('drag', function () {
     lfmap.panInsideBounds(bounds, { animate: true });
 });
 
-const SCALE = new L.Control.ScaleNautical({
+const scale = new L.Control.ScaleNautical({
     position: "bottomright",
     maxWidth: 100
 }).addTo(lfmap);
@@ -44,11 +45,11 @@ const LC = L.control
 if (document.querySelector('input[name="selectBackground"]')) {
     document.querySelectorAll('input[name="selectBackground"]').forEach((elem) => {
         elem.addEventListener("change", function (event) {
-            const ITEM = event.target.value;
+            const item = event.target.value;
             for (let key in basemaps) {
                 basemaps[key].remove();
             };
-            basemaps[ITEM].addTo(lfmap);
+            basemaps[item].addTo(lfmap);
         });
     });
 }

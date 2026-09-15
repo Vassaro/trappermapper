@@ -9,15 +9,13 @@
     "about": "About",
     "contact": "Contact",
     "qr": "QR",
-    "index": "Index"
+    "index": "Programlunta"
   },
-  "map": {
-    "title": "Places",
-    "selectPlace": "Select a place",
-    "coordinates": "Coordinates"
-  },
-  "buttons": {
-    "close": "Close",
-    "search": "Search"
+  "mapcontrols": {
+    "controltitle": "Filters",
+    "basemaps": "Map backgrounds",
+    "layers": "Map filters",
+    "sat": "Satellite",
+    "osm": "OpenStreetMap"
   }
 }
