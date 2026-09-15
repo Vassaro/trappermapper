@@ -2,39 +2,82 @@
     "layers": [
         {
             "id": "campfiresites",
-            "title": {
-                "sv": "Lägerbålsplatser",
-                "en": "Campfire sites"
-            },
+            "hide": true,
             "children": [
                 {
                     "id": "logrings",
-                    "source": "campfiresites.logrings.geojson",
-                    "title": {
-                        "sv": "Stockringar",
-                        "en": "Log rings"
-                    },
-                    "visible": true
+                    "source": "example.geojson",
+                    "hide": true
                 },
                 {
                     "id": "cliffs",
-                    "source": "campfiresites.cliffs.geojson",
-                    "title": {
-                        "sv": "Klipphällar",
-                        "en": "Cliffs"
-                    },
-                    "visible": true
+                    "source": "example.geojson",
+                    "hide": true
                 },
                 {
                     "id": "ceilings",
-                    "source": "campfiresites.ceilings.geojson",
-                    "title": {
-                        "sv": "Eldstad med tak",
-                        "en": "Fire places with ceiling"
-                    },
-                    "visible": true
+                    "source": "example.geojson",
+                    "hide": true
                 }
             ]
+        },
+        {
+            "id": "windshelters",
+            "hide": false,
+            "children": [
+                {
+                    "id": "fire",
+                    "source": "example.geojson",
+                    "hide": true
+                },
+                {
+                    "id": "nofire",
+                    "source": "example.geojson",
+                    "hide": true
+                },
+                {
+                    "id": "misc",
+                    "source": "example.geojson",
+                    "hide": true
+                }
+            ]
+        },
+        {
+            "id": "activitytrails",
+            "hide": true,
+            "children": [
+                {
+                    "id": "trapper",
+                    "source": "example.geojson",
+                    "hide": true
+                },
+                {
+                    "id": "naturetrail",
+                    "source": "example.geojson",
+                    "hide": true
+                },
+                {
+                    "id": "wildernesstrail",
+                    "source": "example.geojson",
+                    "hide": true
+                }
+            ]
+        },
+        {
+            "id": "activitysites",
+            "hide": true
+        },
+        {
+            "id": "hikingtrails",
+            "hide": true
+        },
+        {
+            "id": "seaactivities",
+            "hide": true
+        },
+        {
+            "id": "misc",
+            "hide": true
         }
     ]
 }

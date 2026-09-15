@@ -1,21 +1,52 @@
 {
-  "site": {
-    "title": "Trappermapper",
-    "description": "Karta över Vässarös programaktiviteter",
-    "language": "Språk"
-  },
-  "navigation": {
-    "home": "Hem",
-    "about": "Om",
-    "contact": "Kontakt",
-    "qr": "QR",
-    "index": "Programlunta"
-  },
-  "mapcontrols": {
-    "controltitle": "Filter",
-    "basemaps": "Kartbakgrunder",
-    "layers": "Kartfilter",
-    "sat": "Satellit",
-    "osm": "OpenStreetMap"
-  }
+	"site": {
+		"title": "Trappermapper",
+		"description": "Karta över Vässarös programaktiviteter",
+		"language": "Språk"
+	},
+	"navigation": {
+		"home": "Hem",
+		"about": "Om",
+		"contact": "Kontakt",
+		"qr": "QR",
+		"index": "Programlunta"
+	},
+	"mapcontrols": {
+		"controltitle": "Filter",
+		"basemaps": "Kartbakgrunder",
+		"layers": "Kartfilter",
+		"sat": "Satellit",
+		"osm": "OpenStreetMap"
+	},
+	"layers": {
+		"campfiresites": {
+			"title": "Lägerbålsplatser",
+			"logrings": "Stockringar",
+			"cliffs": "Klipphällar",
+			"ceilings": "Eldstad med tak"
+		},
+		"windshelters": {
+			"title": "Vindskydd",
+			"fire": "Med eldstad",
+			"nofire": "Utan eldstad"
+		},
+		"activitytrails": {
+			"title": "Aktivitetsspår",
+			"trapper": "Trapperspåret",
+			"naturetrail": "Naturnäran",
+			"wildernesstrail": "Vildmarksspåret"
+		},
+		"activitysites": {
+			"title": "Aktivitetsplatser"
+		},
+		"hikingtrails": {
+			"title": "Vandringsstigar"
+		},
+		"seaactivities": {
+			"title": "Sjöaktiviteter"
+		},
+		"misc": {
+			"title": "Övrigt"
+		}
+	}
 }

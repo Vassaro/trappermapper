@@ -1,21 +1,29 @@
 {
-  "site": {
-    "title": "Trappermapper",
-    "description": "Vässarö Program activities map.",
-    "language": "Language"
-  },
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "qr": "QR",
-    "index": "Programlunta"
-  },
-  "mapcontrols": {
-    "controltitle": "Filters",
-    "basemaps": "Map backgrounds",
-    "layers": "Map filters",
-    "sat": "Satellite",
-    "osm": "OpenStreetMap"
-  }
+	"site": {
+		"title": "Trappermapper",
+		"description": "Vässarö Program activities map.",
+		"language": "Language"
+	},
+	"navigation": {
+		"home": "Home",
+		"about": "About",
+		"contact": "Contact",
+		"qr": "QR",
+		"index": "Programlunta"
+	},
+	"mapcontrols": {
+		"controltitle": "Filters",
+		"basemaps": "Map backgrounds",
+		"layers": "Map filters",
+		"sat": "Satellite",
+		"osm": "OpenStreetMap"
+	},
+	"layers": {
+		"campfiresites": {
+			"title": "Campfire sites",
+			"logrings": "Log rings",
+			"cliffs": "Cliffs",
+			"ceilings": "With ceiling"
+		}
+	}
 }

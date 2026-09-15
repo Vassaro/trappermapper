@@ -1,0 +1,31 @@
+.layer-tree {
+    width: 100%;
+}
+
+.layer-tree-node {
+    margin: 2px 0;
+}
+
+.layer-tree-row {
+    /* display: flex; */
+    /* align-items: center; */
+    /* min-height: 32px; */
+}
+
+.layer-checkbox {
+    /* margin-right: 8px; */
+    /* flex-shrink: 0; */
+}
+
+.layer-label {
+    /* cursor: pointer; */
+    /* user-select: none;/ */
+    /* margin: 0; */
+}
+
+.layer-tree-children {
+    /* margin-left: 24px; */
+    margin-left: 15px;
+    border-left: 1px solid #ddd;
+    /* padding-left: 8px; */
+}

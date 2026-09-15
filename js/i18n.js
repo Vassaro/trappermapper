@@ -28,7 +28,7 @@ const i18n = {
         }
 
         const response = await fetch(
-            `/locales/${language}.json`
+            `./locales/${language}.json`
         );
 
         if (!response.ok) {
