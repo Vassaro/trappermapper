@@ -2,82 +2,86 @@
     "layers": [
         {
             "id": "campfiresites",
-            "hide": true,
+            "skip": false,
             "children": [
                 {
                     "id": "logrings",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": false
                 },
                 {
                     "id": "cliffs",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": false
                 },
                 {
                     "id": "ceilings",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": false
                 }
             ]
         },
         {
             "id": "windshelters",
-            "hide": false,
+            "skip": false,
             "children": [
                 {
                     "id": "fire",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": false
                 },
                 {
                     "id": "nofire",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": false
                 },
                 {
                     "id": "misc",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": true
                 }
             ]
         },
         {
             "id": "activitytrails",
-            "hide": true,
+            "skip": false,
             "children": [
                 {
                     "id": "trapper",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": false
                 },
                 {
                     "id": "naturetrail",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": false
                 },
                 {
                     "id": "wildernesstrail",
                     "source": "example.geojson",
-                    "hide": true
+                    "skip": false
                 }
             ]
         },
         {
             "id": "activitysites",
-            "hide": true
+            "skip": false,
+            "children": []
         },
         {
             "id": "hikingtrails",
-            "hide": true
+            "skip": false,
+            "children": []
         },
         {
             "id": "seaactivities",
-            "hide": true
+            "skip": false,
+            "children": []
         },
         {
             "id": "misc",
-            "hide": true
+            "skip": false,
+            "children": []
         }
     ]
 }

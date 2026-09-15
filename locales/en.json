@@ -9,7 +9,10 @@
 		"about": "About",
 		"contact": "Contact",
 		"qr": "QR",
-		"index": "Programlunta"
+		"index": "Program booklet",
+		"content": {
+			"qr": "Scan me for this web site."
+		}
 	},
 	"mapcontrols": {
 		"controltitle": "Filters",

@@ -9,7 +9,10 @@
 		"about": "Om",
 		"contact": "Kontakt",
 		"qr": "QR",
-		"index": "Programlunta"
+		"index": "Programlunta",
+		"content": {
+			"qr": "Skanna mig för att komma tillbaka hit."
+		}
 	},
 	"mapcontrols": {
 		"controltitle": "Filter",
@@ -28,7 +31,8 @@
 		"windshelters": {
 			"title": "Vindskydd",
 			"fire": "Med eldstad",
-			"nofire": "Utan eldstad"
+			"nofire": "Utan eldstad",
+			"misc": "Andra"
 		},
 		"activitytrails": {
 			"title": "Aktivitetsspår",

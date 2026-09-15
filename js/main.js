@@ -6,8 +6,6 @@ import lfmap from "./leaflet.js";
 
 import { LayerTreeControl } from "./layerControl.js";
 
-// Your existing map setup
-
 // Layer tree
 const layerTree = new LayerTreeControl(
     lfmap,
@@ -16,7 +14,5 @@ const layerTree = new LayerTreeControl(
         translate: key => i18n.t(key)
     }
 );
-
-console.log(layerTree)
 
 await layerTree.loadConfig("./js/data/layers.json");

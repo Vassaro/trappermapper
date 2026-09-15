@@ -22,7 +22,6 @@ export class LayerTreeControl {
         }
 
         this.config = await response.json();
-        console.log(this.config.layers);
         await this.loadLayers(this.config.layers);
         this.renderTree();
     }
@@ -32,7 +31,7 @@ export class LayerTreeControl {
      */
     async loadLayers(layers) {
         for (const layer of layers) {
-            if (layer.hide) {
+            if (!layer.skip) {
                 if (layer.children) {
                     await this.loadLayers(layer.children);
                 }
@@ -56,12 +55,16 @@ export class LayerTreeControl {
     renderTree() {
         this.container.innerHTML = "";
         for (const layer of this.config.layers) {
-            if (layer.hide) {
+            console.log(layer)
+            if (!layer.skip) {
                 this.container.appendChild(this.createNode(layer));
             }
         }
     }
 
+    /*
+     * Render layer tree row
+     */
     createNode(layer, parentId = "", level = 0) {
         const li = document.createElement("li");
 
@@ -93,8 +96,8 @@ export class LayerTreeControl {
         } else {
             label.dataset.i18n = "layers." + parentId + "." + layer.id;
         }
-        
-        label.textContent = 
+
+        label.textContent =
             this.translate(label.dataset.i18n);
 
         row.appendChild(checkbox);
@@ -109,14 +112,16 @@ export class LayerTreeControl {
             children.className = "list-unstyled layer-tree-children";
 
             for (const child of layer.children) {
-                children.appendChild(
-                    // this.createNode(child, level + 1)
-                    this.createNode(child, layer.id, level + 1)
-                );
+                if (!child.skip) {
+                    children.appendChild(
+                        // this.createNode(child, level + 1)
+                        this.createNode(child, layer.id, level + 1)
+                    );
+                }
             }
 
             li.appendChild(children);
-        } 
+        }
 
         return li;
     }
@@ -125,5 +130,5 @@ export class LayerTreeControl {
         // TODO...
     }
 
-    
+
 }

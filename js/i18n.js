@@ -130,7 +130,6 @@ async function init() {
     setupLanguageButtons();
     updatePage();
     updateLanguageButtons();
-    console.log(i18n.language)
 
 }
 
