@@ -61,7 +61,7 @@ const i18n = {
             .split(".")
             .reduce((object, part) => object?.[part], this.translations);
 
-        return value ?? key;
+        return value ?? "translation missing: " + key;
     },
 
     localized(value, fallback = this.defaultLanguage) {
